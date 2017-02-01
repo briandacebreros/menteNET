@@ -72,13 +72,32 @@
 					$dt = new DateTime;
 	                if (isset($year) && isset($week) ) {
 	                    $dt->setISODate($year, $week );
-	                    
+	                   
 	                } else {
 	                    $dt->setISODate($dt->format('o'), $dt->format('W'));
 	                }
 	                $year = $dt->format('o');
 	                $week = $dt->format('W');
+				} else {
+					$year_temp = null;
+					$week_temp = null;
+					$dt = new DateTime;
+	                if (isset($year_temp) && isset($week_temp) ) {
+	                    $dt->setISODate($year, $week_temp );
+	                   
+	                } else {
+	                    $dt->setISODate($dt->format('o'), $dt->format('W'));
+	                }
+	                $year_now = $dt->format('o');
+	                $week_now = $dt->format('W');
+	                if( $year < $year_now ) {
+	                	redirect(base_url() . 'admin/calendario/' . $week_now . '/' . $year_now );
+	                }
+	                if( $week < $week_now && $year == $year_now ) {
+	                	redirect(base_url() . 'admin/calendario/' . $week_now . '/' . $year_now );
+	                }
 				}
+
 				$data['week'] = $week;
 				$data['year'] = $year;
 

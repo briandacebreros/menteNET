@@ -15,7 +15,6 @@
 
             
             <div class="col-sm-10 col-sm-offset-2">
-              <h1>* NO DEJAR QUE SE AGREGUEN CITAS EN EL PASADO</h1>
                 <?php
                 $dt = new DateTime;
                 if (isset($year) && isset($week) ) {
@@ -30,8 +29,8 @@
                 ?>
 
                 <div class="contenedor-botones-calendario">
-                    <a id="pre" href="<?php echo base_url(). 'admin/calendario/' . ((int)$week-1) . '/' . $year; ?>"><<</a> <!--Previous week-->
-                    <a id="next" href="<?php echo base_url(). 'admin/calendario/'.((int)$week+1) . '/' . $year; ?>">>></a> <!--Next week-->
+                    <a id="pre" href="<?php echo base_url(). 'admin/calendario/' . ((int)$week-1) . '/' . $year; ?>">ANTERIOR</a> <!--Previous week-->
+                    <a id="next" href="<?php echo base_url(). 'admin/calendario/'.((int)$week+1) . '/' . $year; ?>">SIGUIENTE</a> <!--Next week-->
                 </div>
                 
                 <?php
@@ -341,7 +340,7 @@
     text-align: right;
     cursor: pointer;
 }
-.btn-ventana-emergente {
+.btn-ventana-emergente, .btn-cancelar-bloqueo {
     position: relative;
     display: inline-block;
     width: 150px;
@@ -352,7 +351,7 @@
     border: none;
     height: 150px;
 }
-.btn-ventana-emergente:hover {
+.btn-ventana-emergente:hover, .btn-cancelar-bloqueo:hover {
     background-color: #ccc;
 }
 .datos-fecha-seleccionada {
