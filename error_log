@@ -1,0 +1,143 @@
+[06-Jan-2017 01:04:16 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 01:05:30 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 01:05:32 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:20:04 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:31:59 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:33:50 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:33:51 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:33:51 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:33:51 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:33:52 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:33:52 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:33:52 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:33:52 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:33:52 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:33:55 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:04 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:05 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:05 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:05 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:06 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:06 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:06 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:06 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:52 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:53 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:53 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:54 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:34:54 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[06-Jan-2017 19:39:51 UTC] PHP Fatal error:  Call to a member function get_datos_generales() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 24
+[10-Jan-2017 22:00:56 UTC] PHP Fatal error:  Cannot redeclare Sitio_model::iniciar_sesion() in /home/proaesthetics/public_html/menteNET/application/models/Sitio_model.php on line 69
+[10-Jan-2017 22:01:49 UTC] PHP Fatal error:  Cannot redeclare Sitio_model::iniciar_sesion() in /home/proaesthetics/public_html/menteNET/application/models/Sitio_model.php on line 69
+[10-Jan-2017 22:05:03 UTC] PHP Fatal error:  Cannot redeclare Sitio_model::iniciar_sesion() in /home/proaesthetics/public_html/menteNET/application/models/Sitio_model.php on line 69
+[11-Jan-2017 00:01:39 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 36
+[11-Jan-2017 20:07:37 UTC] PHP Fatal error:  Call to undefined function issetor() in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 16
+[11-Jan-2017 20:30:10 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 20
+[11-Jan-2017 20:30:23 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 20
+[11-Jan-2017 20:30:25 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 20
+[11-Jan-2017 20:48:27 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 20:49:01 UTC] PHP Fatal error:  Call to undefined function usuarios() in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 11
+[11-Jan-2017 20:50:06 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 20:50:10 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 20:52:43 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:37:35 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:39:33 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:39:43 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:40:03 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:44:35 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:46:02 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:46:06 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:46:42 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:46:47 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:46:53 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:47:54 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 30
+[11-Jan-2017 22:48:23 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 22:48:33 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 22:48:55 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 22:48:58 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 22:49:01 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 22:49:05 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 22:50:23 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 22:50:27 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 22:50:31 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 22:50:37 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 22:51:14 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 22:51:24 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 23:04:51 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 23:05:33 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/login.php on line 28
+[11-Jan-2017 23:23:54 UTC] PHP Fatal error:  Call to undefined function cerrar_sesion() in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 32
+[12-Jan-2017 00:05:48 UTC] PHP Fatal error:  Call to undefined function login() in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 51
+[12-Jan-2017 00:14:12 UTC] PHP Fatal error:  Call to undefined function cerrar_sesion() in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 36
+[12-Jan-2017 00:14:28 UTC] PHP Fatal error:  Call to undefined function cerrar_sesion() in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 36
+[12-Jan-2017 00:14:36 UTC] PHP Fatal error:  Call to undefined function cerrar_sesion() in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 36
+[12-Jan-2017 01:10:47 UTC] PHP Fatal error:  Call to undefined function limpiar_errores() in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 89
+[12-Jan-2017 01:11:14 UTC] PHP Fatal error:  Call to undefined function limpiar_errores() in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 89
+[12-Jan-2017 01:53:24 UTC] PHP Fatal error:  Call to a member function run() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 99
+[12-Jan-2017 01:59:35 UTC] PHP Fatal error:  Call to a member function run() on a non-object in /home/proaesthetics/public_html/menteNET/application/controllers/Principal.php on line 99
+[12-Jan-2017 21:59:15 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/clientes.php on line 36
+[12-Jan-2017 22:00:47 UTC] PHP Fatal error:  Call to undefined function get_usuarios() in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 22
+[12-Jan-2017 22:01:27 UTC] PHP Fatal error:  Call to undefined function get_usuarios() in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 22
+[12-Jan-2017 22:35:58 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/proaesthetics/public_html/menteNET/application/models/Sitio_model.php on line 25
+[13-Jan-2017 00:53:33 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/cliente.php on line 7
+[13-Jan-2017 00:54:03 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/cliente.php on line 7
+[13-Jan-2017 00:54:03 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/cliente.php on line 7
+[13-Jan-2017 02:03:59 UTC] PHP Fatal error:  Call to undefined function iniciar_sesion() in /home/proaesthetics/public_html/menteNET/application/models/Sitio_model.php on line 69
+[13-Jan-2017 02:09:28 UTC] PHP Fatal error:  Call to undefined function iniciar_sesion() in /home/proaesthetics/public_html/menteNET/application/models/Sitio_model.php on line 70
+[13-Jan-2017 02:52:18 UTC] PHP Fatal error:  Call to undefined function iniciar_sesion() in /home/proaesthetics/public_html/menteNET/application/models/Sitio_model.php on line 73
+[13-Jan-2017 02:53:57 UTC] PHP Fatal error:  Call to undefined function iniciar_sesion() in /home/proaesthetics/public_html/menteNET/application/models/Sitio_model.php on line 72
+[22-Jan-2017 11:04:04 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/proaesthetics/public_html/menteNET/application/views/convenios.php on line 20
+[22-Jan-2017 11:04:43 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/proaesthetics/public_html/menteNET/application/views/convenios.php on line 21
+[22-Jan-2017 11:04:45 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/proaesthetics/public_html/menteNET/application/views/convenios.php on line 21
+[22-Jan-2017 11:04:47 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/proaesthetics/public_html/menteNET/application/views/convenios.php on line 21
+[22-Jan-2017 11:30:28 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/clientes.php on line 41
+[22-Jan-2017 11:30:50 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/clientes.php on line 41
+[22-Jan-2017 11:30:57 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/clientes.php on line 41
+[22-Jan-2017 11:31:01 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/clientes.php on line 41
+[22-Jan-2017 11:31:18 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/clientes.php on line 41
+[22-Jan-2017 11:33:35 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/clientes.php on line 41
+[22-Jan-2017 11:34:07 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/clientes.php on line 41
+[22-Jan-2017 11:34:10 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/clientes.php on line 41
+[22-Jan-2017 11:34:46 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/clientes.php on line 41
+[22-Jan-2017 12:14:27 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/proaesthetics/public_html/menteNET/application/models/Sitio_model.php on line 42
+[22-Jan-2017 12:16:27 UTC] PHP Fatal error:  Call to undefined method Sitio_model::get_clientes() in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 66
+[22-Jan-2017 12:16:30 UTC] PHP Fatal error:  Call to undefined method Sitio_model::get_clientes() in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 66
+[22-Jan-2017 13:37:11 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/proaesthetics/public_html/menteNET/application/models/Sitio_model.php on line 40
+[22-Jan-2017 16:20:28 UTC] PHP Fatal error:  Call to undefined method Sitio_model::get_cita() in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 45
+[22-Jan-2017 16:20:33 UTC] PHP Fatal error:  Call to undefined method Sitio_model::get_cita() in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 45
+[22-Jan-2017 18:53:55 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/proaesthetics/public_html/menteNET/application/models/Sitio_model.php on line 74
+[28-Jan-2017 13:14:23 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/proaesthetics/public_html/menteNET/application/views/cliente.php on line 25
+[28-Jan-2017 13:14:23 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/proaesthetics/public_html/menteNET/application/views/cliente.php on line 25
+[28-Jan-2017 13:15:03 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/proaesthetics/public_html/menteNET/application/views/cliente.php on line 25
+[28-Jan-2017 13:15:03 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/proaesthetics/public_html/menteNET/application/views/cliente.php on line 25
+[28-Jan-2017 13:15:37 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/proaesthetics/public_html/menteNET/application/views/cliente.php on line 25
+[28-Jan-2017 13:15:37 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/proaesthetics/public_html/menteNET/application/views/cliente.php on line 25
+[29-Jan-2017 16:38:16 UTC] PHP Fatal error:  Call to undefined method Sitio_model::editar_convenio() in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 203
+[30-Jan-2017 11:09:07 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/proaesthetics/public_html/menteNET/application/views/calendario.php on line 17
+[30-Jan-2017 11:14:25 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 71
+[30-Jan-2017 11:15:52 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 71
+[30-Jan-2017 11:15:54 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 71
+[30-Jan-2017 11:16:05 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 71
+[30-Jan-2017 11:16:25 UTC] PHP Fatal error:  Class 'Model' not found in /home/proaesthetics/public_html/menteNET/application/models/Calendar_model.php on line 2
+[30-Jan-2017 11:24:10 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/proaesthetics/public_html/menteNET/application/models/Calendar_model.php on line 10
+[30-Jan-2017 11:45:27 UTC] PHP Fatal error:  Call to undefined function calendar_design() in /home/proaesthetics/public_html/menteNET/application/models/Calendar_model.php on line 12
+[30-Jan-2017 11:47:08 UTC] PHP Fatal error:  Call to undefined function calendar_design() in /home/proaesthetics/public_html/menteNET/application/models/Calendar_model.php on line 11
+[30-Jan-2017 11:52:51 UTC] PHP Fatal error:  Call to undefined method CI_Model::CI_Model() in /home/proaesthetics/public_html/menteNET/application/models/Calendar_model.php on line 6
+[30-Jan-2017 11:55:14 UTC] PHP Fatal error:  Call to undefined method CI_Model::Model() in /home/proaesthetics/public_html/menteNET/application/models/Calendar_model.php on line 6
+[30-Jan-2017 13:23:25 UTC] PHP Fatal error:  Function name must be a string in /home/proaesthetics/public_html/menteNET/application/models/Calendar_model.php on line 75
+[30-Jan-2017 13:47:53 UTC] PHP Fatal error:  Call to undefined method Sitio_model::get_convenio() in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 88
+[30-Jan-2017 13:48:36 UTC] PHP Fatal error:  Call to undefined method Sitio_model::get_convenio() in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 88
+[30-Jan-2017 13:51:12 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/proaesthetics/public_html/menteNET/application/views/precios.php on line 25
+[30-Jan-2017 13:58:48 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/proaesthetics/public_html/menteNET/application/views/cliente.php on line 116
+[30-Jan-2017 15:46:00 UTC] PHP Fatal error:  Call to undefined method Sitio_model::edit_link_cita() in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 185
+[30-Jan-2017 22:56:59 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/proaesthetics/public_html/menteNET/application/views/calendario.php on line 84
+[30-Jan-2017 22:56:59 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/proaesthetics/public_html/menteNET/application/views/calendario.php on line 84
+[30-Jan-2017 22:57:18 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/proaesthetics/public_html/menteNET/application/views/calendario.php on line 109
+[30-Jan-2017 22:57:19 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/proaesthetics/public_html/menteNET/application/views/calendario.php on line 109
+[31-Jan-2017 22:31:02 UTC] PHP Parse error:  syntax error, unexpected 'is' (T_STRING), expecting function (T_FUNCTION) in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 101
+[01-Feb-2017 10:26:50 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ',' or ';' in /home/proaesthetics/public_html/menteNET/application/views/calendario.php on line 144
+[01-Feb-2017 10:27:39 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ',' or ';' in /home/proaesthetics/public_html/menteNET/application/views/calendario.php on line 144
+[01-Feb-2017 17:56:45 UTC] PHP Fatal error:  Call to undefined method Sitio_model::cancelar_cita_by_datos() in /home/proaesthetics/public_html/menteNET/application/controllers/Admin.php on line 236
+[01-Feb-2017 18:10:10 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/proaesthetics/public_html/menteNET/application/views/calendario.php on line 135
+[01-Feb-2017 18:10:11 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/proaesthetics/public_html/menteNET/application/views/calendario.php on line 135
+[01-Feb-2017 18:10:28 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/proaesthetics/public_html/menteNET/application/views/calendario.php on line 137
+[01-Feb-2017 18:10:28 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/proaesthetics/public_html/menteNET/application/views/calendario.php on line 137

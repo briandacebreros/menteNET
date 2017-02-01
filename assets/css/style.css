@@ -1,0 +1,1893 @@
+body
+{
+    font-family:                  'Muli', sans-serif;
+}
+
+a:hover
+{
+    opacity:                      0.85;
+}
+
+/*-- NAVBAR --*/
+.navbar-container
+{
+    display:                      block;
+    position:                     fixed;
+    width:                        100%;
+    height:                       auto;
+    padding-top:                  10px;
+    padding-bottom:               10px;
+    background:                   #FFF;
+    top:                          0;
+    left:                         0;
+    border-bottom:                1px #eaeaea solid;
+    z-index:                      999;
+}
+#logo-nav
+{
+    display:                      block;
+    position:                     relative;
+    height:                       50px;
+    width:                        auto;
+    margin-left:                  25px;
+}
+.menu-container
+{
+    display:                      block;
+    position:                     absolute;
+    right:                        0;
+    top:                          0;
+    bottom:                       0;
+}
+.menu-option
+{
+    display:                      inline-block;
+    position:                     relative;
+    font-size:                    14px;
+    font-weight:                  400;
+    color:                        #439aca;
+    margin-right:                 15px;
+    top:                          50%;
+    transform:                    translateY(-50%);
+}
+.menu-register
+{
+    display:                      inline-block;
+    position:                     relative;
+    width:                        135px;
+    height:                       100%;
+    background:                   #439aca;
+}
+.menu-register span
+{
+    display:                      block;
+    position:                     relative;
+    text-align:                   center;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #FFF;
+    top:                          50%;
+    transform:                    translateY(-50%);
+}
+.menu-register:hover
+{
+    opacity:                      0.85;
+}
+a:hover
+{
+    text-decoration:              none;
+}
+/*--== end NAVBAR ==--*/
+
+/*-- BANNER --*/
+.banner-container
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    margin-top:                   70px;
+}
+.banner-bg
+{
+    display:                      block;
+    position:                     absolute;
+    width:                        60%;
+    height:                       100%;
+    top:                          0;
+    right:                        0;
+    background:                   url('../images/banner_bg.jpg')no-repeat left center;
+    background-size:              cover;
+}
+.banner-bg-text
+{
+    display:                      block;
+    position:                     relative;
+    height:                       auto;
+    padding-top:                  75px;
+    padding-bottom:               75px;
+    padding-left:                 13%;
+    padding-right:                13%;
+    background:                   url('../images/banner_shape.svg')left center no-repeat;
+    background-size:              cover;
+}
+.banner-bg-text h3
+{
+    font-size:                    50px;
+    font-weight:                  900;
+    color:                        #FFF;
+    line-height:                  60px;
+}
+.banner-bg-text p
+{
+    font-size:                    16px;
+    font-weight:                  700;
+    color:                        #f1ea9a;
+}
+.btn-general {
+    padding:                      4px;
+    background-color:             #439aca;
+    color:                        #FFF;
+    position:                     relative;
+    display:                      inline-block;
+    min-width:                    100px;
+    text-align:                   center;
+    margin-bottom:                10px;
+    cursor:                       pointer;
+    border:                       none;
+}
+.btn-general:hover {
+    background-color:             #6eabcd;
+}
+.btn-cancel {
+    padding:                      4px;
+    background-color:             #e96767;
+    color:                        #FFF;
+    position:                     relative;
+    display:                      inline-block;
+    min-width:                    100px;
+    text-align:                   center;
+    margin-bottom:                10px;
+    cursor:                       pointer;
+    border:                       none;
+}
+.btn-cancel:hover {
+    background-color:             #f35252;
+}
+.btn-register
+{
+    display:                      block;
+    position:                     relative;
+    padding-top:                  10px;
+    padding-bottom:               10px;
+    width:                        150px;
+    background:                   #ffb608;
+    text-align:                   center;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #FFF;
+    margin-top:                   25px;
+}
+.btn-register:hover
+{
+    background:                   #ccc;
+    color:                        #FFF;
+}
+.cita-gratis-white
+{
+    display:                      block;
+    position:                     relative;
+    font-size:                    14px;
+    font-weight:                  400;
+    color:                        #FFF;
+    margin-top:                   10px;
+}
+/*--== end BANNER ==--*/
+
+/*-- INTRO --*/
+.frase-intro-container
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    background:                   #eeeeee;
+    padding-top:                  50px;
+    padding-bottom:               50px;
+}
+.frase-intro-container h3
+{
+    font-size:                    39px;
+    font-weight:                  900;
+    color:                        #056d97;
+    text-align:                   center;
+}
+.frase-intro-container p
+{
+    font-size:                    16px;
+    font-weight:                  700;
+    color:                        #4d4d4d;
+    text-align:                   center;
+}
+.cita-gratis-blue
+{
+    display:                      block;
+    position:                     relative;
+    font-size:                    14px;
+    font-weight:                  400;
+    color:                        #056d97;
+    text-align:                   center;
+    margin-top:                   10px;
+}
+.frase-intro-container a
+{
+    margin-left:                  auto;
+    margin-right:                 auto;
+}
+/*--== end INTRO ==--*/
+
+/*-- PSICOTERAPIA - TERAPIA --*/
+.psicoterapia-container
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    padding-top:                  75px;
+    padding-bottom:               75px;
+}
+.titulo-servicios
+{
+    font-size:                    39px;
+    font-weight:                  900;
+    color:                        #439aca;
+}
+.descripcion-servicios
+{
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #333;
+    margin-top:                   25px;
+}
+.conoce-mas-naranja
+{
+    display:                      block;
+    position:                     relative;
+    width:                        150px;
+    height:                       auto;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #ffb608;
+    text-align:                   center;
+    padding-top:                  8px;
+    padding-bottom:               8px;
+    border:                       2px solid #ffb608;
+    text-decoration:              none;
+    margin-top:                   25px;
+}
+.conoce-mas-naranja:hover
+{
+    background:                   #ffb608;
+    color:                        #FFF;
+}
+.terapia-container
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    padding-top:                  75px;
+    padding-bottom:               75px;
+}
+/*--== end PSICOTERAPIA ==--*/
+
+/*-- PSICOLOGO --*/
+.psicologo-container
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+}
+.flex-function
+{
+    display:                      flex;
+}
+.psicologo-frases
+{
+    display:                      block;
+    position:                     relative;
+    background:                   #eaeaea;
+}
+.carousel
+{
+    display:                      block;
+    position:                     absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.psicologo-frases h5
+{
+    display:                      block;
+    position:                     relative;
+    width:                        75%;
+    margin-left:                  auto;
+    margin-right:                 auto;
+    font-size:                    30px;
+    font-weight:                  900;
+    color:                        #627f88;
+    text-align:                   center;
+}
+.psicologo-brief
+{
+    display:                      block;
+    position:                     relative;
+    height:                       auto;
+    padding-top:                  75px;
+    padding-bottom:               75px;
+    background:                   #439aca;
+}
+.psicologo-brief-center
+{
+    display:                      block;
+    position:                     relative;
+    margin-left:                  10%;
+}
+.psicologo-img
+{
+    display:                      block;
+    position:                     relative;
+    width:                        150px;
+    height:                       150px;
+}
+.psicologo-brief-center h3
+{
+    display:                      block;
+    position:                     relative;
+    font-size:                    39px;
+    font-weight:                  900;
+    color:                        #FFF;
+    margin-bottom:                0;
+}
+.psicologo-brief-center h2
+{
+    display:                      block;
+    position:                     relative;
+    font-size:                    18px;
+    font-weight:                  900;
+    color:                        #FFF;
+    margin-top:                   5px;
+    margin-bottom:                0;
+}
+.psicologo-brief-center span
+{
+    display:                      block;
+    position:                     relative;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #FFF;
+    margin-top:                   5px;
+    margin-bottom:                10px;
+}
+.psicologo-brief-center > p > img
+{
+    display:                      inline-block;
+    position:                     relative;
+    width:                        16px;
+    height:                       auto;
+}
+.psicologo-brief-center p
+{
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #f1ea9a;
+}
+.btn-ver-perfil
+{
+    display:                      block;
+    position:                     relative;
+    width:                        150px;
+    height:                       auto;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #FFF;
+    text-align:                   center;
+    padding-top:                  10px;
+    padding-bottom:               10px;
+    border:                       2px solid #FFF;
+    text-decoration:              none;
+    margin-top:                   25px;
+}
+.btn-ver-perfil:hover
+{
+    background:                   #FFF;
+    color:                        #ffb608;
+}
+/*--== end PSICOLOGO ==--*/
+
+/*-- FREE YOUR MIND --*/
+.free-flex-container
+{
+    display:                     flex;
+}
+.free-img-bg
+{
+    display:                     block;
+    position:                    relative;
+    background:                  url('../images/free-img.jpg')center center no-repeat;
+    background-size:             cover;
+}
+.free-container
+{
+    display:                     block;
+    position:                    relative;
+    height:                      auto;
+    padding-top:                 75px;
+    padding-bottom:              75px;
+    background:                  #EEE;
+}
+.free-container h4
+{
+    font-size:                   60px;
+    font-weight:                 900;
+    color:                       #627f88;
+    text-align:                  center;
+}
+/*--== end FREE YOUR MIND ==--*/
+
+/*-- POR QUE --*/
+.por-que-text
+{
+    display:                     block;
+    position:                    relative;
+    height:                      auto;
+    padding-top:                 75px;
+    padding-bottom:              75px;
+    background:                  #222133;
+}
+.por-que-text h4
+{
+    font-size:                   39px;
+    font-weight:                 900;
+    color:                       #FFF;
+}
+.why-tile
+{
+    display:                     block;
+    position:                    relative;
+    height:                      100px;
+    padding-top:                 20px;
+    padding-bottom:              20px;
+    margin-top:                  10px;
+}
+.why-tile img
+{
+    display:                     inline-block;
+    position:                    absolute;
+    top:                         25px;
+    left:                        10px;
+    width:                       80px;
+    height:                      80px;
+}
+.why-tile-text
+{
+    display:                     inline-block;
+    position:                    relative;
+    margin-left:                 90px;
+    width:                       75%;
+    height:                      auto;
+}
+.why-tile-text h4
+{
+    font-size:                   20px;
+    font-weight:                 900;
+    color:                       #FFF;
+}
+.why-tile-text p
+{
+    font-size:                   14px;
+    font-weight:                 700;
+    color:                       #FFF;
+}
+.por-que-img
+{
+    display:                     block;
+    position:                    relative;
+    background:                  url('../images/por-que-img.jpg')center center no-repeat;
+    background-size:             cover;
+}
+/*--== end POR QUE ==--*/
+
+/*-- ACTUALIZACIONES --*/
+.actualizaciones-container
+{
+    display:                     block;
+    position:                    relative;
+    width:                       100%;
+    height:                      auto;
+    background:                  #e2e2e2;
+    padding-top:                 75px;
+    padding-bottom:              75px;
+}
+.actualizaciones-bloque
+{
+    padding-left:                25px;
+    padding-right:               25px;
+}
+.actualizaciones-bloque h4
+{
+    font-size:                   30px;
+    font-weight:                 900;
+    color:                       #439aca;
+    text-align:                  center;
+}
+.bloque-actualizaciones-container
+{
+    display:                     block;
+    position:                    relative;
+    width:                       100%;
+    height:                      auto;
+    padding:                     25px;
+    background:                  #FFF;
+}
+.bloque-actualizaciones-tile
+{
+    display:                     flex;
+    position:                    relative;
+    width:                       100%;
+    height:                      auto;
+    margin-top:                  3px;
+    margin-bottom:               3px;
+}
+.bloque-actualizaciones-tile:hover
+{
+    opacity:                     0.85;
+}
+.bloque-actualizaciones-date
+{
+    display:                     block;
+    position:                    relative;
+    height:                      auto;
+    background:                  #439aca;
+    padding:                     25px;
+    
+}
+.bloque-actualizaciones-date h6
+{
+    font-size:                   48px;
+    font-weight:                 700;
+    color:                       #FFF;
+    text-align:                  center;
+}
+.bloque-actualizaciones-date span
+{
+    font-size:                   12px;
+    font-weight:                 900;
+    color:                       #FFF;
+    text-align:                  center;
+}
+.bloque-actualizaciones-text
+{
+    display:                     block;
+    position:                    relative;
+    height:                      auto;
+    background:                  #e2e2e2;
+    padding-top:                 25px;
+    padding-bottom:              25px;
+    padding-left:                10px;
+    padding-right:               10px;
+}
+.bloque-actualizaciones-text h6
+{
+    font-size:                   18px;
+    font-weight:                 900;
+    color:                       #000;
+}
+.bloque-actualizaciones-text p
+{
+    font-size:                   14px;
+    font-weight:                 700;
+    color:                       #000;
+}
+.ver-mas-actualizaciones
+{
+    display:                     block;
+    position:                    relative;
+    width:                       150px;
+    height:                      auto;
+    margin-left:                 auto;
+    margin-right:                auto;
+    margin-top:                  25px;
+    padding-top:                 15px;
+    padding-bottom:              15px;
+    background:                  #439aca;
+    font-size:                   14px;
+    font-weight:                 700;
+    color:                       #FFF;
+    text-align:                  center;
+}
+.ver-mas-actualizaciones:hover
+{
+    background:                  #FFF;
+    color:                       #439aca;
+}
+/*--== end ACTUALIZACIONES ==--*/
+
+/*-- EMPRESAS AFILIADAS --*/
+.empresas-container
+{
+    display:                     block;
+    position:                    relative;
+    width:                       100%;
+    height:                      auto;
+    padding-top:                 75px;
+    padding-bottom:              75px;
+    background:                  #FFF;
+}
+.empresas-container h3
+{
+    font-size:                   32px;
+    font-weight:                 700;
+    color:                       #439aca;
+    text-align:                  center;
+    margin-bottom:               0;
+}
+.empresas-container p
+{
+    font-size:                   16px;
+    font-weight:                 400;
+    color:                       #439aca;
+    text-align:                  center;
+}
+.empresas-container span
+{
+    display:                     block;
+    position:                    relative;
+    width:                       auto;
+    margin-left:                 auto;
+    margin-right:                auto;
+    font-size:                   14px;
+    font-weight:                 400;
+    color:                       #666;
+    text-align:                  center;
+    margin-bottom:               25px;
+}
+.empresas-imgs
+{
+    display:                     block;
+    position:                    relative;
+    height:                      100px;
+    background:                  #eaeaea;
+    padding-left:                10px;
+    padding-right:               10px;
+    margin-top:                  10px;
+}
+/*--== end EMPRESAS AFILIADAS ==--*/
+
+/*-- FOOTER CONTAINER --*/
+.footer-container
+{
+    display:                     block;
+    position:                    relative;
+    width:                       100%;
+    height:                      auto;
+    padding-top:                 75px;
+    padding-bottom:              75px;
+    background:                  #e2e2e2;
+}
+.redes-container
+{
+    display:                     block;
+    position:                    relative;
+    width:                       230px;
+    height:                      50px;
+    margin-left:                 auto;
+    margin-right:                auto;
+    margin-bottom:               25px;
+}
+.redes-container a img
+{
+    display:                     inline-block;
+    position:                    relative;
+    width:                       54px;
+    height:                      54px;
+    padding-left:                5px;
+    padding-right:               5px;
+}
+.redes-container a img:hover
+{
+    opacity:                     0.85;   
+}
+.sitemap-link
+{
+    font-size:                   14px;
+    font-weight:                 400;
+    color:                       #333;    
+}
+/*--== end FOOTER CONTAINER ==--*/
+
+
+/*------------------------------*/
+/*---------SERVICIOS.PHP--------*/
+/*------------------------------*/
+
+/*-- SERVICIOS CONTAINER --*/
+.servicios-container
+{
+    display:                     block;
+    position:                    relative;
+    width:                       100%;
+    height:                      auto;
+    padding-top:                 75px;
+    padding-bottom:              75px;
+    background:                  #eee;
+    margin-top:                  50px;
+}
+.servicios-container h3, .servicios-psicoterapia-container h3, .servicios-cursos-container h3
+{
+    font-size:                   39px;
+    font-weight:                 900;
+    color:                       #439aca;
+    text-align:                  center;
+}
+.servicios-container p, .servicios-psicoterapia-container p, .servicios-cursos-container p
+{
+    font-size:                   16px;
+    font-weight:                 400;
+    color:                       #333;
+    text-align:                  center;
+}
+/*--== end SERVICIOS CONTAINER ==--*/
+
+/*-- SERVICIOS PSICOTERAPIA --*/
+.servicios-psicoterapia-container
+{
+    display:                     block;
+    position:                    relative;
+    width:                       100%;
+    height:                      auto;
+    background:                  url('../images/psicoterapia.jpg')center center no-repeat;
+    background-size:             cover;
+}
+.servicios-psicoterapia, .servicios-cursos
+{
+    display:                     block;
+    position:                    relative;
+    height:                      auto;
+    padding-top:                 75px;
+    padding-bottom:              75px;
+    background:                  rgba(255,255,255,0.90);
+}
+.servicios-psicoterapia-container h3, .servicios-cursos-container h3, .servicios-psicoterapia-container p, .servicios-cursos-container p
+{
+    text-align:                  left !important;
+}
+.especialidades-container
+{
+    height:                      auto;
+    margin-top:                  25px;
+}
+.especialidades-container span
+{
+    display:                     inline-block;
+    position:                    relative;
+    width:                       48%;
+    margin-left:                 1%;
+    height:                      auto;
+    padding:                     5px 10px;
+    border:                      1px solid #439aca;
+    margin-top:                  3px;
+    color:                       #333;
+}
+.btns-container
+{
+    display:                     block;
+    position:                    relative;
+    margin-top:                  25px;
+}
+.btn-register-servicios
+{
+    display:                      inline-block;
+    position:                     relative;
+    padding-top:                  10px;
+    padding-bottom:               10px;
+    width:                        150px;
+    background:                   #ffb608;
+    text-align:                   center;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #FFF;
+    margin-left:                  5px;
+}
+.btn-register-servicios:hover
+{
+    background:                   #ccc;
+    color:                        #FFF;
+}
+.conoce-mas-naranja-servicios
+{
+    display:                      inline-block;
+    position:                     relative;
+    width:                        150px;
+    height:                       auto;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #ffb608;
+    text-align:                   center;
+    padding-top:                  8px;
+    padding-bottom:               8px;
+    border:                       2px solid #ffb608;
+    text-decoration:              none;
+    margin-left:                  5px;
+}
+.conoce-mas-naranja-servicios:hover
+{
+    background:                   #ffb608;
+    color:                        #FFF;
+}
+/*--== end SERVICIOS PSICOTERAPIA ==--*/
+
+/*-- SERVICIOS TERAPIA --*/
+.servicios-cursos-container
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    background:                   url('../images/cursos.jpg')center center no-repeat;
+}
+/*--== end SERVICIOS TERAPIA ==--*/
+
+/*------------------------------*/
+/*------------BLOG.PHP----------*/
+/*------------------------------*/
+
+/*-- GENERAL BLOG --*/
+.general-blog-container
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    padding-top:                  150px;
+    padding-bottom:               150px;
+    background:                   #eee;
+}
+.blog-header
+{
+    padding-bottom:              25px;
+}
+.blog-header h3
+{
+    font-size:                   39px;
+    font-weight:                 900;
+    color:                       #439aca;
+}
+.blog-header p
+{
+    font-size:                   16px;
+    font-weight:                 400;
+    color:                       #333;
+}
+.last-article
+{
+    display:                     flex;
+    position:                    relative;
+    margin-top:                  25px;
+}
+.last-article-img
+{
+    display:                     block;
+    position:                    relative;
+    height:                      auto;
+    background-size:             cover;
+}
+.last-article-text
+{
+    display:                     block;
+    position:                    relative;
+    height:                      auto;
+    padding:                     75px 25px;
+    background:                  #FFF;
+}
+.last-article-text h4
+{
+    font-size:                   26px;
+    font-weight:                 900;
+    color:                       #2a3f47;
+}
+.last-article-text p
+{
+    font-size:                   16px;
+    font-weight:                 400;
+    color:                       #4d4d4d;
+    text-align:                  justify;
+}
+.last-article-text span
+{
+    font-size:                   12px;
+    font-weight:                 400;
+    color:                       #439aca;
+}
+.last-article-text a
+{
+    display:                      block;
+    position:                     relative;
+    padding-top:                  10px;
+    padding-bottom:               10px;
+    width:                        150px;
+    background:                   #439aca;
+    text-align:                   center;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #FFF;
+    margin-top:                   25px;
+}
+.last-article-text a:hover
+{
+    background:                   #ccc;
+}
+.article-feed > div
+{
+    padding:                      0;
+}
+.article-feed-tile
+{
+    display:                      block;
+    position:                     relative;
+    height:                       auto;
+    padding:                      0 10px;
+    margin-top:                   25px;
+}
+.article-feed-tile-img
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       250px;
+    background-size:              cover;
+}
+.article-feed-text
+{
+    display:                      block;
+    position:                     relative;
+    height:                       auto;
+    padding:                      15px;
+    background:                   #FFF;
+}
+.article-feed-text h4
+{
+    font-size:                    22px;
+    font-weight:                  900;
+    color:                        #2a3f47;
+}
+.article-feed-text h4:hover, .article-feed-tile-img:hover
+{
+    opacity:                      0.85;
+}
+.article-feed-text p
+{
+    font-size:                    14px;
+    font-weight:                  400;
+    color:                        #4d4d4d;
+    text-align:                   justify;
+}
+.article-feed-text span
+{
+    font-size:                    12px;
+    font-weight:                  400;
+    color:                        #439aca;
+}
+/*--== end GENERAL BLOG ==--*/
+
+/*-- SINGLE PAGE --*/
+.single-container
+{
+    display:                      block;
+    position:                     relative;
+    padding-left:                 15px;
+    padding-right:                15px;
+}
+.single-img
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+}
+.single-text
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    padding:                      25px 25px;
+    background:                   #FFF;
+}
+.single-text h3
+{
+    font-size:                    36px;
+    font-weight:                  900;
+    color:                        #2a3f47;
+}
+.single-text span, .single-author
+{
+    font-size:                    12px;
+    font-weight:                  400;
+    color:                        #439aca;
+}
+.single-text p
+{
+    font-size:                    16px;
+    font-weight:                  400;
+    color:                        #4d4d4d;
+    text-align:                   justify;
+    margin-top:                   25px;
+}
+/*--== end SINGLE PAGE==--*/
+
+/*------------------------------*/
+/*-----------TALLER.PHP---------*/
+/*------------------------------*/
+
+/*-- CURSOS --*/
+.talleres-container
+{
+    display:                      flex;
+    position:                     relative;
+    margin-top:                   25px;
+}
+.taller-img
+{
+    display:                      block;
+    position:                     relative;
+    height:                       auto;
+    background-size:              cover;
+}
+.taller-text
+{
+    display:                      block;
+    position:                     relative;
+    height:                       auto;
+    padding:                      25px;
+    background:                   #FFF;
+}
+.taller-text h3
+{
+    font-size:                    22px;
+    font-weight:                  900;
+    color:                        #2a3f47;
+}
+.taller-text p
+{
+    font-size:                    16px;
+    font-weight:                  400;
+    color:                        #4d4d4d;
+    text-align:                   justify;
+    margin-top:                   25px;
+}
+.taller-details
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    margin-top:                   25px;
+}
+.taller-detail
+{
+    display:                      inline-block;
+    position:                     relative;
+    height:                       auto;
+    margin-right:                 5px;
+    font-size:                    16px;
+    font-weight:                  700;
+    color:                        #666;
+}
+.taller-detail img
+{
+    display:                      inline-block;
+    position:                     relative;
+    height:                       25px;
+    width:                        auto;
+    margin-right:                 5px;
+    margin-left:                  10px;
+}
+.taller-price
+{
+    display:                      inline-block;
+    position:                     relative;
+    width:                        100%;
+    margin-top:                   25px;
+}
+.taller-price h6
+{
+    font-size:                    18px;
+    font-weight:                  700;
+    color:                        #666;
+    margin:                       0;
+}
+.taller-price span
+{
+    font-size:                    12px;
+    font-weight:                  700;
+    color:                        #439aca;
+}
+.register-event
+{
+    display:                      block;
+    position:                     absolute;
+    width:                        150px;
+    padding-top:                  10px;
+    padding-bottom:               10px;
+    background:                   #439aca;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #FFF;
+    text-align:                   center;
+    top:                          0;
+    right:                        0;
+}
+.register-event:hover
+{
+    background:                   #ccc;
+    color:                        #FFF;
+}
+/*--== end CURSOS ==--*/
+
+/*------------------------------*/
+/*-----------CONTACTO.PHP---------*/
+/*------------------------------*/
+.contacto-container
+{
+    display:                      block;
+    position:                     relative;
+    height:                       auto;
+    background:                   #FFF;
+    padding-top:                  50px;
+    padding-bottom:               50px;
+}
+.contacto-container form
+{
+    display:                      block;
+    position:                     relative;
+    width:                        375px;
+    margin-left:                  auto;
+    margin-right:                 auto;
+}
+.input-form
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       35px;
+    border:                       2px solid #e2e2e2;
+    font-size:                    16px;
+    font-weight:                  400;
+    color:                        #4db1ad;
+    padding:                      10px;
+}
+.contacto-container form textarea
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       125px;
+    border:                       2px solid #e2e2e2;
+    font-size:                    16px;
+    font-weight:                  400;
+    color:                        #4db1ad;
+    padding:                      10px;
+}
+.enviar-msj
+{
+    display:                      block;
+    position:                     relative;
+    width:                        150px;
+    height:                       auto;
+    padding-top:                  10px;
+    padding-bottom:               10px;
+    background:                   #4db1ad;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #FFF;
+    text-align:                   center;
+    margin-left:                  auto;
+    margin-right:                 auto;
+    margin-top:                   25px;
+    border:                       none;
+}
+.enviar-msj:hover
+{
+    background:                   #ccc;
+}
+
+/*------------------------------*/
+/*-----------LOGIN.PHP----------*/
+/*------------------------------*/
+
+.login-container
+{
+    display:                       block;
+    position:                      relative;
+    width:                         100%;
+    position:                      auto;
+    padding-top:                   175px;
+    padding-bottom:                150px;
+    background:                    url('../images/login-bg.jpg')center center no-repeat;
+    background-size:               cover;
+}
+.login-flex
+{
+    display:                       flex;
+    position:                      relative;
+}
+.login-text
+{
+    display:                       block;
+    position:                      relative;
+    background:                    #439aca;
+    padding-top:                   50px;
+    padding-left:                  25px;
+    padding-right:                 25px;
+}
+.login-text > div
+{
+    display:                       block;
+    position:                      relative;
+    padding:                       25px;
+}
+.login-text h4
+{
+    font-size:                     24px;
+    font-weight:                   700;
+    color:                         #FFF;
+}
+.login-text p
+{
+    font-size:                     14px;
+    font-weight:                   400;
+    color:                         #FFF;
+}
+.login-text img
+{
+    display:                       block;
+    position:                      absolute;
+    width:                         auto;
+    height:                        50px;
+    margin-left:                   auto;
+    margin-right:                  auto;
+    bottom:                        25px;
+    left:                          0;
+    right:                         0;
+}
+.login-form
+{
+    display:                       block;
+    position:                      relative;
+    height:                        auto;
+    background:                    #eee;
+    padding:                       150px 75px;
+}
+.switch-container
+{
+    display:                       block;
+    position:                      relative;
+    width:                         auto;
+    height:                        auto;
+}
+.switch-login
+{
+    display:                       inline-block;
+    position:                      relative;
+    width:                         100px;
+    height:                        auto;
+    padding-top:                   5px;
+    padding-bottom:                5px;
+    border:                        1px solid #439aca;
+    font-size:                     14px;
+    font-weight:                   700;
+    text-align:                    center;
+    margin:                        0;
+}
+.switch-register
+{
+    display:                       inline-block;
+    position:                      relative;
+    width:                         115px;
+    height:                        auto;
+    padding-top:                   5px;
+    padding-bottom:                5px;
+    color:                         #439aca;
+    font-size:                     14px;
+    font-weight:                   700;
+    text-align:                    center;
+    border:                        1px solid #439aca;
+    margin:                        0;
+    margin-left:                   -3px;
+}
+.switch-login.selected, .switch-register.selected {
+    background-color:              #439aca;
+    color:                         #FFF;
+    padding-top:                   6px;
+    padding-bottom:                6px;
+}
+.switch-register:hover
+{
+    background:                    #ccc;
+    color:                         #FFF;
+    border:                        1px solid #aaa;
+}
+.login-form form
+{
+    display:                       block;
+    position:                      relative;
+    width:                         100%;
+    height:                        auto;
+    margin-left:                   auto;
+    margin-right:                  auto;
+    margin-top:                    25px;
+}
+.input-login
+{
+    display:                       block;
+    position:                      relative;
+    width:                         100%;
+    height:                        35px;
+    border:                        none;
+    border-bottom:                 1px solid #439aca;
+    color:                         #333;
+    font-size:                     16px;
+    font-weight:                   400;
+    margin-top:                    10px;
+    background:                    transparent;
+}
+.btn-login
+{
+    display:                       block;
+    position:                      relative;
+    width:                         150px;
+    height:                        auto;
+    padding-top:                   10px;
+    padding-bottom:                10px;
+    background:                    #ffb608;
+    font-size:                     14px;
+    font-weight:                   700;
+    color:                         #FFF;
+    border:                        none;
+    margin-top:                    25px;
+    cursor:                        pointer;
+}
+.btn-login:hover
+{
+    background:                    #ccc;
+    color:                         #FFF;
+}
+
+/*--- ACCOUNT NAVBAR ---*/
+.menu-account
+{
+    display:                      inline-block;
+    position:                     relative;
+    width:                        auto;
+    height:                       100%;
+    padding-left:                 15px;
+    padding-right:                15px;
+    background:                   #439aca;
+}
+.menu-account img
+{
+    display:                      inline-block;
+    position:                     relative;
+    width:                        27px;
+    height:                       auto;
+    margin-left:                  auto;
+    margin-right:                 auto;
+    top:                          50%;
+    transform:                    translateY(-50%);
+}
+.menu-account:hover
+{
+    cursor:                       pointer;
+    opacity:                      0.85;
+}
+
+/*--- end ACCOUNT NAVBAR ---*/
+
+/*--- CLIENT DASHBORAD ---*/
+.container-general
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    min-height:                   90vh;
+    padding-top:                  150px;
+    padding-bottom:               250px;
+    background:                   #eee;
+}
+.citas-disponibles-container
+{
+    display:                      flex;
+    position:                     relative;
+    width:                        335px;
+    height:                       auto;
+}
+.citas-disponibles-container h6
+{
+    display:                      inline-block;
+    position:                     relative;
+    width:                        195px;
+    height:                       auto;
+    padding-top:                  12px;
+    padding-bottom:               8px;
+    background:                   #FFF;
+    font-size:                    16px;
+    font-weight:                  700;
+    color:                        #4d4d4d;
+    text-align:                   center;
+    margin:                       0;
+}
+.citas-disponibles-container span
+{
+    color:                        #439aca;
+}
+.citas-disponibles-container a
+{
+    display:                      inline-block;
+    position:                     relative;
+    width:                        97px;
+    height:                       auto;
+    padding-top:                  8px;
+    padding-bottom:               8px;
+    background:                   #439aca;
+    font-size:                    16px;
+    font-weight:                  700;
+    text-align:                   center;
+    color:                        #FFF;
+}
+.citas-title
+{
+    font-size:                    20px;
+    color:                        #4d4d4d;
+    text-align:                   center;
+    margin-top:                   50px;
+    margin-bottom:                25px;
+}
+.citas-proximas-container
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+}
+.cita-tile
+{
+    display:                      flex;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    margin-top:                   3px;
+    background:                   #FFF;
+}
+.cita-tile-fecha
+{
+    display:                      inline-block;
+    position:                     relative;
+    padding:                      8px 12px;
+    background:                   #FFF;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #666;
+}
+.cita-tile-fecha img
+{
+    display:                      inline-block;
+    position:                     relative;
+    height:                       25px;
+    width:                        auto;
+    margin-right:                 10px;
+}
+.cita-tile-hora
+{
+    display:                      inline-block;
+    position:                     relative;
+    padding:                      8px 12px;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #666;
+}
+.cita-tile-hora img
+{
+    display:                      inline-block;
+    position:                     relative;
+    height:                       25px;
+    width:                        auto;
+    margin-right:                 10px;
+    
+}
+.cita-tile-menu
+{
+    display:                      inline-block;
+    position:                     absolute;
+    width:                        25px;
+    height:                       100%;
+    padding-top:                  10px;
+    top:                          0;
+    right:                        0;
+}
+.cita-tile-menu:hover
+{
+    background:                   #eaeaea;
+    cursor:                       pointer;
+}
+.cita-tile-menu img
+{
+    display:                      block;
+    position:                     relative;
+    height:                       20px;
+    width:                        auto;
+    margin-left:                  auto;
+    margin-right:                 auto;
+}
+.agregar-cita
+{
+    display:                      block;
+    position:                     relative;
+    height:                       auto;
+    font-size:                    12px;
+    font-weight:                  700;
+    color:                        #333;
+    margin-top:                   25px;
+}
+.agregar-cita img
+{
+    display:                      inline-block;
+    position:                     relative;
+    height:                       40px;
+    width:                        auto;
+    margin-right:                 5px;
+}
+.ir-a-cita
+{
+    display:                      inline-block;
+    position:                     relative;
+    margin-left:                  10px;
+}
+.ir-a-cita img
+{
+    display:                      inline-block;
+    position:                     absolute;
+    height:                       28px;
+    width:                        auto;
+    margin-top:                   7px;
+}
+.cita-tile-menu-desplegado
+{
+    display:                      none;
+    position:                     absolute;
+    width:                        120px;
+    height:                       auto;
+    right:                        0;
+    top:                          6px;
+    z-index:                      99;
+    -webkit-filter:               drop-shadow(2px 2px 3px rgba(0,0,0,0.25)); /* Safari */
+    filter:                       drop-shadow(2px 2px 3px rgba(0,0,0,0.25));
+}
+.cita-tile-menu-desplegado a
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    padding-top:                  10px;
+    padding-bottom:               10px;
+    background:                   #FFF;
+    text-align:                   center;
+    font-size:                    12px;
+    font-weight:                  700;
+    color:                        #4d4d4d;
+    border-bottom:                1px solid #eaeaea;
+}
+.cita-tile-menu-desplegado a:hover
+{
+    background:                   #439aca;
+    color:                        #FFF;
+    opacity:                      1;
+}
+.account-menu-nav
+{
+    top:                          50px;
+}
+/*--== end CLIENT DASHBOARD ==--*/
+
+/*-- AGENDA --*/
+.header-title
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    background:                   #eee;
+    padding-top:                  125px;
+    padding-bottom:               75px;
+}
+.header-title h4
+{
+    font-size:                    36px;
+    font-weight:                  900;
+    color:                        #439aca;
+}
+.header-title p
+{
+    font-size:                    16px;
+    font-weight:                  400;
+    color:                        #333;
+}
+.agenda-container
+{
+    display:                      block;
+    position:                     relative;
+    padding-top:                  50px;
+    padding-bottom:               150px;
+}
+.day-column
+{
+    display:                      block;
+    position:                     relative;
+    padding-left:                 5px;
+    padding-right:                5px;
+    margin-top:                   25px;
+}
+.day-tile
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    background:                   #FFF;
+    padding-top:                  10px;
+    padding-bottom:               10px;
+    border:                       1px solid #e2e2e2;
+    margin-bottom:                10px;
+}
+.day-tile:hover
+{
+    background:                   #eee;
+    cursor:                       pointer;
+}
+.day-month
+{
+    display:                      block;
+    position:                     relative;
+    text-align:                   center;
+    font-size:                    12px;
+    font-weight:                  700;
+    color:                        #959595;
+    line-height:                  25px;
+}
+.day-number
+{
+    display:                      block;
+    position:                     relative;
+    text-align:                   center;
+    font-size:                    28px;
+    font-weight:                  400;
+    color:                        #4d4d4d;
+    line-height:                  20px;
+}
+.day-name
+{
+    display:                      block;
+    position:                     relative;
+    text-align:                   center;
+    font-size:                    13px;
+    font-weight:                  700;
+    color:                        #439aca;
+    line-height:                  25px;
+}
+.day-hour
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    padding-top:                  8px;
+    padding-bottom:               8px;
+    background:                   #439aca;
+    text-align:                   center;
+    font-size:                    18px;
+    font-weight:                  400;
+    color:                        #FFF;
+    margin-top:                   3px;
+}
+.day-hour:hover
+{
+    background:                   #ccc;
+    cursor:                       pointer;
+}
+.day-hour.ocupado {
+    background-color:             #ccc;
+    cursor:                       default;  
+}
+.contenedor-botones-calendario {
+    position:                     relative; 
+    display:                      block;
+}
+.contenedor-botones-calendario a {
+    font-size:                    18px;
+}
+.contenedor-botones-calendario #next {
+    float:                        right;
+}
+.alt-desc img
+{
+    display:                      inline-block;
+    position:                     relative;
+    height:                       15px;
+    width:                        auto;
+    margin-right:                 10px;
+}
+.alt-desc
+{
+    font-size:                    12px;
+    font-weight:                  400;
+    color:                        #333;
+}
+/*--== end AGENDA ==--*/
+
+/*-- ADMIN DASHBOARD --*/
+.nombre-paciente
+{
+    font-size:                    16px;
+    font-weight:                  700;
+    color:                        #4d4d4d;
+    padding-top:                  7px;
+    margin-left:                  10px;
+}
+.menu-admin
+{
+    display:                      block;
+    position:                     absolute;
+    width:                        225px;
+    height:                       100%;
+    background:                   #439aca;
+    left:                         0;
+    top:                          0;
+    padding-top:                  71px;
+}
+.menu-admin a
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    text-align:                   center;
+    font-size:                    16px;
+    font-weight:                  700;
+    color:                        #FFF;
+    padding-top:                  20px;
+    padding-bottom:               20px;
+    border-bottom:                1px solid rgba(0, 0, 0, 0.25);
+    background:                   #439aca;
+}
+.menu-admin a:hover
+{
+    opacity:                       0.65;
+}
+.title-big
+{
+    text-align:                   center;
+    font-size:                    28px;
+    font-weight:                  700;
+    color:                        #4d4d4d;
+    margin-top:                   25px;
+}
+.google-analytics-frame
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       400px;
+    background:                   #333;
+}
+/*--== end ADMIN DASHBOARD ==--*/
+
+/*-- ADMIN DASHBOARD - CLIENTES --*/
+.header-table
+{
+    display:                      block;
+    position:                     relative;
+    height:                       auto;
+    padding-top:                  5px;
+    padding-bottom:               5px;
+    background:                   #439aca;
+    font-size:                    14px;
+    font-weight:                  700;
+    color:                        #FFF;
+}
+.header-table div
+{
+    border-right:                 1px solid rgba(0,0,0,0.25);
+}
+.header-table div:hover
+{
+    cursor:                       pointer;
+    opacity:                      0.75;
+}
+.list-row
+{
+    display:                      block;
+    position:                     relative;
+    height:                       auto;
+    padding-top:                  15px;
+    padding-bottom:               15px;
+    background:                   #FFF;
+    font-size:                    16px;
+    font-weight:                  700;
+    color:                        #333;
+    margin-top:                   3px;
+}
+.list-row:hover
+{
+    cursor:                       pointer;
+    opacity:                      0.75;
+}
+.header-perfil h4
+{
+    font-size:                    28px;
+    font-weight:                  700;
+    color:                        #439aca;
+}
+.profile-section-btn
+{
+    height:                       auto;
+    padding-left:                 5px;
+    padding-right:                5px;
+    margin-top:                   50px;
+}
+.profile-section-btn a
+{
+    display:                      block;
+    position:                     relative;
+    width:                        100%;
+    height:                       auto;
+    font-size:                    18px;
+    font-weight:                  700;
+    color:                        #439aca;
+    text-align:                   center;
+    padding-top:                  25px;
+    padding-bottom:               25px;
+    background:                   #FFF;
+    border:                       1px solid #ccc;
+}
+.profile-section-btn a:hover
+{
+    background:                   #eaeaea;
+}
+.section-content
+{
+    display:                      block;
+    position:                     relative;
+    height:                       auto;
+    padding:                      15px;
+    background:                   #FFF;
+    font-size:                    16px;
+    font-weight:                  700;
+    color:                        #333;
+    margin-top:                   25px;
+}
+.edit-btn
+{
+    display:                      block;
+    position:                     absolute;
+    width:                        55px;
+    height:                       55px;
+    right:                        0;
+    top:                          25px;
+}
+.edit-btn img
+{
+    width:                        55px;
+}
+/*--== end ADMIN DASHBOARD - CLIENTES ==--*/
