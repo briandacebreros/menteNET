@@ -7,15 +7,16 @@
 		}
 
 		
-		function get_datos_generales()
+		function actualizar_sesion()
 		{
-			/*
-			$data['id_usuario'] = $this->session->userdata('id');
-			$data['tipo_usuario'] = $this->session->userdata('tipo');
-			$data['nombre_usuario'] = $this->session->userdata('nombre');
-			$data['telefono_usuario'] = $this->session->userdata('telefono');
-			*/
-			return $data;
+            if( $_SESSION['tipo_usuario'] == 'normal' ) {
+                if( $this->get_usuario($_SESSION['id'] ) ) {
+                    $usuario = $this->get_usuario($_SESSION['id']);
+                    foreach($usuario->result() as $u) {
+			             $this->set_datos_sesion_by_usuario($u);
+                    }
+                }
+            }       
 		}
 		function get_datos_session() {
 
@@ -23,7 +24,14 @@
 		public function get_usuarios(){
 			$condicion = array(
 				'tipo_usuario' 		=> 'normal'
-				);
+			);
+            return $this->db->where($condicion)->order_by("nombre", "asc")->get('usuario');
+        }
+        public function get_usuarios_con_creditos() {
+            $condicion = array(
+                'tipo_usuario'      => 'normal',
+                'creditos > '          => '0'
+            );
             return $this->db->where($condicion)->order_by("nombre", "asc")->get('usuario');
         }
         public function get_usuario($id) {
@@ -42,7 +50,7 @@
 
         	$query = "SELECT C.citaID, U.usuarioID, U.nombre, U.ap_paterno, U.ap_materno, C.fecha, C.hora, C.link FROM `cita` C
                 INNER JOIN `usuario` U
-                WHERE C.usuarioID = U.usuarioID AND C.estado = 'futura'
+                WHERE C.usuarioID = U.usuarioID AND C.estado = 'futura' AND U.usuarioID != '10'
                 ORDER BY C.fecha ASC";
         	return $this->db->query($query);
         }
@@ -62,7 +70,7 @@
             return $this->db->where($condicion)->get('cita');
         }
         public function get_cita($id) {
-            $query = "SELECT C.citaID, U.usuarioID, U.nombre, U.ap_paterno, U.ap_materno, C.fecha, C.hora, C.link FROM `cita` C
+            $query = "SELECT C.citaID, U.usuarioID, U.nombre, U.ap_paterno, U.ap_materno, C.fecha, C.hora, C.link, U.correo FROM `cita` C
                 INNER JOIN `usuario` U
                 WHERE C.usuarioID = U.usuarioID AND C.citaID =" . $id;
             return $this->db->query($query);
@@ -88,24 +96,9 @@
             $condiciones = array( 
                 'citaID'             => $data['citaID']
             );
-            $this->db->where($condiciones)->delete('cita');
+            $this->aumentar_credito($data['usuarioID']);
+            return $this->db->where($condiciones)->delete('cita');
 
-            //$query = "SELECT `creditos` FROM `usuario` WHERE `usuarioID` = " . $data['usuarioID'];
-            //$creditos_tupla = $this->db->query($query);
-            //$num_creditos = (int)$creditos_tupla->creditos + 1;
-            
-            //$condicion = array (
-            //    'usuarioID'          => $data['usuarioID']
-            //);
-
-            $_SESSION['creditos'] = (int)$_SESSION['creditos'] + 1;
-            $datos = array( 
-                'creditos'          => $_SESSION['creditos'] 
-            );
-            $condicion = array (
-                'usuarioID'        => $data['usuarioID']
-            );
-            return $this->db->where($condicion)->update('usuario', $datos);
 
         }
         public function desbloquear_cita($data) {
@@ -162,32 +155,46 @@
 
 
         public function agendar_cita($data) {
+            $this->reducir_credito($data['id']);
             $datos = array(
 				'usuarioID' 	=> $data['id'],
 				'fecha' 		=> $data['fecha'],
 				'hora'			=> $data['hora'],
 				'estado'		=> $data['estado'],
 				'link'			=> $data['link']             
-			);       
-            $_SESSION['creditos'] = (int)$_SESSION['creditos'] - 1;
-            $datoCreditos = array( 
-                'creditos'          => $_SESSION['creditos'] 
-            );
-            $condicion = array (
-                'usuarioID'        => $data['id']
-            );
-            $this->db->where($condicion)->update('usuario', $datoCreditos);
+			);      
             return $this->db->insert('cita',$datos);                        
         }
         public function agendar_cita_admin($data) {
+            $this->reducir_credito($data['id']);
             $datos = array(
                 'usuarioID'     => $data['id'],
                 'fecha'         => $data['fecha'],
                 'hora'          => $data['hora'],
                 'estado'        => $data['estado'],
                 'link'          => $data['link']             
-            );       
+            );
             return $this->db->insert('cita',$datos);                        
+        }
+        public function reducir_credito($id) {
+            $usuario = $this->get_usuario($id);
+            foreach( $usuario->result() as $u ) :
+                $creditos = $u->creditos;
+                $creditos = (int)$creditos - 1;
+                $datos = array('creditos' => $creditos);
+                $condicion = array('usuarioID' => $u->usuarioID);
+                $this->db->where($condicion)->update('usuario', $datos);
+            endforeach;
+        }
+        public function aumentar_credito($id) {
+            $usuario = $this->get_usuario($id);
+            foreach( $usuario->result() as $u ) :
+                $creditos = $u->creditos;
+                $creditos = (int)$creditos + 1;
+                $datos = array('creditos' => $creditos);
+                $condicion = array('usuarioID' => $u->usuarioID);
+                $this->db->where($condicion)->update('usuario', $datos);
+            endforeach;
         }
         public function agregar_link_cita($data) {
             $link = $data['link'];
@@ -295,25 +302,11 @@
 				'contrasena' 	=> sha1($contrasena)
 			);
 
-			$_SESSION['condiciones'] = $condiciones;
-			$_SESSION['username'] = $username;
 			if($this->db->where($condiciones)->get('usuario')->num_rows() > 0) {
 				//EL USUARIO EXISTE
 				$_SESSION['mensaje'] = 'Encontro usuario';
-				$registro = $this->db->where($condiciones)->get('usuario')->row();
-				$_SESSION['id'] = $registro->usuarioID;
-				$_SESSION['username'] = $registro->username;
-				$_SESSION['contrasena'] = $registro->contrasena;
-				$_SESSION['nombre'] = $registro->nombre;
-				$_SESSION['ap_paterno'] = $registro->ap_paterno;
-				$_SESSION['ap_materno'] = $registro->ap_materno;
-				$_SESSION['correo'] = $registro->correo;
-				$_SESSION['telefono'] = $registro->telefono;
-				$_SESSION['fecha_registro'] = $registro->fecha_registro;
-				$_SESSION['creditos'] = $registro->creditos;
-				$_SESSION['tipo_usuario'] = $registro->tipo_usuario;
-
-				$_SESSION['error_login'] = '';
+				$usuario = $this->db->where($condiciones)->get('usuario')->row();
+				$this->set_datos_sesion_by_usuario($usuario);
 				return true;
 			}
 			else {
@@ -343,7 +336,19 @@
 
 
 
-
+        function set_datos_sesion_by_usuario($usuario) {
+                $_SESSION['id'] = $usuario->usuarioID;
+                $_SESSION['username'] = $usuario->username;
+                $_SESSION['contrasena'] = $usuario->contrasena;
+                $_SESSION['nombre'] = $usuario->nombre;
+                $_SESSION['ap_paterno'] = $usuario->ap_paterno;
+                $_SESSION['ap_materno'] = $usuario->ap_materno;
+                $_SESSION['correo'] = $usuario->correo;
+                $_SESSION['telefono'] = $usuario->telefono;
+                $_SESSION['fecha_registro'] = $usuario->fecha_registro;
+                $_SESSION['creditos'] = $usuario->creditos;
+                $_SESSION['tipo_usuario'] = $usuario->tipo_usuario;
+        }
 
 	}
 

@@ -5,107 +5,110 @@
                 <h4>Agenda tu cita</h4>
                 <p>Agenda tu cita seleccionando la fecha y horario que más te convenga.</p>
             </div>
+
         </div>
     </div>
 </div>
 
 <div class="agenda-container">
     <div class="container">
-        <div class="row">
-            <div class="col-md-2 col-md-offset-2 alt-desc"><img src="<?php echo base_url(); ?>assets/images/disponible.svg" alt=""> Horario disponible</div>
-            <div class="col-md-2 alt-desc"><img src="<?php echo base_url(); ?>assets/images/ocupado.svg" alt=""> Horario ocupado</div>
+        <div class="col-sm-10 col-sm-offset-2">
+            <?php
+                echo 'ID: ' . @$_SESSION['id'];
+                $dt = new DateTime;
+                if (isset($year) && isset($week) ) {
+                    $dt->setISODate($year, $week );
+                } else {
+                    $dt->setISODate($dt->format('o'), $dt->format('W'));
+                    
+                }
+                $year = $dt->format('o');
+                $week = $dt->format('W');
+                ?>
+
+                <div class="contenedor-botones-calendario">
+                    <a id="pre" href="<?php echo base_url(). 'principal/agendar/' . ((int)$week-1) . '/' . $year; ?>">ANTERIOR</a> <!--Previous week-->
+                    <a id="next" href="<?php echo base_url(). 'principal/agendar/'.((int)$week+1) . '/' . $year; ?>">SIGUIENTE</a> <!--Next week-->
+                </div>
+                
+                <?php
+
+                
+                do { 
+
+                  $cita_12 = 'libre';
+                  $cita_14 = 'libre';
+                  $cita_16 = 'libre';
+                  $cita_18 = 'libre';
+
+                  $mi_cita_12 = '';
+                  $mi_cita_14 = '';
+                  $mi_cita_16 = '';
+                  $mi_cita_18 = '';
+
+                  $month = $dt->format('m');
+                  $day = $dt->format('d');
+
+                ?>
+                  <div class="col-md-2 day-column">
+                    <?php if ( $dt->format('l') != 'Saturday' && $dt->format('l') != 'Sunday' ) : ?>
+                        <div class="day-tile">
+                            <span class="day-month"><?php echo $dt->format('M'); ?></span>
+                            <span class="day-number"><?php echo $dt->format('d'); ?></span>
+                            <span class="day-name"><?php echo $dt->format('l'); ?></span>
+                        </div>
+                        <?php
+                          $fecha_current = $year . '-' . $month . '-' . $day;
+
+                          foreach( $citas->result() as $cita ) :
+                              if( $cita->fecha == $fecha_current ) :
+                                
+
+                                if( $cita->hora == "12:00:00") :
+                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_12 = 'mi-cita'; endif;
+                                  $cita_12 = 'ocupado';
+                                endif;
+                                if( $cita->hora == "14:00:00") :
+                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_14 = 'mi-cita'; endif;
+                                  $cita_14 = 'ocupado';
+                                endif;
+                                if( $cita->hora == '16:00:00' ) :
+                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_16 = 'mi-cita'; endif;
+                                  $cita_16 = 'ocupado';
+                                endif;
+                                if( $cita->hora == '18:00:00') :
+                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_18 = 'mi-cita'; endif;
+                                  $cita_18 = 'ocupado';
+                                endif;
+                              endif;
+                          endforeach;                            
+                        ?>
+
+                        <div id="<?php echo $fecha_current . '-12'; ?>" class="day-hour <?php echo $cita_12 . ' ' . $mi_cita_12; ?>">
+                            12:00
+                        </div>
+                        <div id="<?php echo $fecha_current . '-14'; ?>" class="day-hour <?php echo $cita_14 . ' ' . $mi_cita_14; ?>">
+                            14:00
+                        </div>
+                        <div id="<?php echo $fecha_current . '-16'; ?>" class="day-hour <?php echo $cita_16 . ' ' . $mi_cita_16; ?>">
+                            16:00
+                        </div>
+                        <div id="<?php echo $fecha_current . '-18'; ?>" class="day-hour <?php echo $cita_18 . ' ' . $mi_cita_18; ?>">
+                            18:00
+                        </div>
+                    <?php endif; ?>
+                  </div>
+                <?php
+                    //echo "<td>" . $dt->format('l') . "<br>" . $dt->format('d M') . "</td>\n";
+                    $dt->modify('+1 day');
+
+                } while ($week == $dt->format('W'));
+                ?>
+                   
+
+            </div>
         </div>
-        <div class="row">
-            <!-- DAY COLUMN -->
-            <div id="day1" class="col-md-1 col-md-offset-2 day-column">
-                <div class="day-tile">
-                    <font class="day-month">Dic</font>
-                    <font class="day-number">12</font>
-                    <font class="day-name">LUNES</font>
-                </div>
-                <div class="day-hour">12:00</div>
-                <div class="day-hour">14:00</div>
-                <div class="day-hour">16:00</div>
-                <div class="day-hour">18:00</div>
-            </div>
-            <!-- end DAY COLUMN -->
-            
-            <!-- DAY COLUMN -->
-            <div id="day2" class="col-md-1 day-column">
-                <div class="day-tile">
-                    <font class="day-month">Dic</font>
-                    <font class="day-number">13</font>
-                    <font class="day-name">MARTES</font>
-                </div>
-                <div class="day-hour">12:00</div>
-                <div class="day-hour">14:00</div>
-                <div class="day-hour">16:00</div>
-                <div class="day-hour">18:00</div>
-            </div>
-            <!-- end DAY COLUMN -->
-            
-            <!-- DAY COLUMN -->
-            <div id="day3" class="col-md-1 day-column">
-                <div class="day-tile">
-                    <font class="day-month">Dic</font>
-                    <font class="day-number">14</font>
-                    <font class="day-name">MIERCOLES</font>
-                </div>
-                <div class="day-hour">12:00</div>
-                <div class="day-hour">14:00</div>
-                <div class="day-hour">16:00</div>
-                <div class="day-hour">18:00</div>
-            </div>
-            <!-- end DAY COLUMN -->
-            
-            <!-- DAY COLUMN -->
-            <div id="day4" class="col-md-1 day-column">
-                <div class="day-tile">
-                    <font class="day-month">Dic</font>
-                    <font class="day-number">15</font>
-                    <font class="day-name">JUEVES</font>
-                </div>
-                <div class="day-hour">12:00</div>
-                <div class="day-hour">14:00</div>
-                <div class="day-hour">16:00</div>
-                <div class="day-hour">18:00</div>
-            </div>
-            <!-- end DAY COLUMN -->
-            
-            <!-- DAY COLUMN -->
-            <div id="day5" class="col-md-1 day-column">
-                <div class="day-tile">
-                    <font class="day-month">Dic</font>
-                    <font class="day-number">16</font>
-                    <font class="day-name">VIERNES</font>
-                </div>
-                <div class="day-hour">12:00</div>
-                <div class="day-hour">14:00</div>
-                <div class="day-hour">16:00</div>
-                <div class="day-hour">18:00</div>
-            </div>
-            <!-- end DAY COLUMN -->
-            
-            <!-- DAY COLUMN -->
-            <div id="day6" class="col-md-1 day-column">
-                <div class="day-tile">
-                    <font class="day-month">Dic</font>
-                    <font class="day-number">17</font>
-                    <font class="day-name">SABADO</font>
-                </div>
-            </div>
-            <!-- end DAY COLUMN -->
-            
-            <!-- DAY COLUMN -->
-            <div id="day7" class="col-md-1 day-column">
-                <div class="day-tile">
-                    <font class="day-month">Dic</font>
-                    <font class="day-number">18</font>
-                    <font class="day-name">DOMINGO</font>
-                </div>
-            </div>
-            <!-- end DAY COLUMN -->
-        </div>
+        
 
 
         <div class="row">
@@ -122,3 +125,81 @@
         </div>
     </div>
 </div>
+
+
+
+<div id="ventana-emergente">
+    <div class="fondo-emergente"></div>
+    <div class="contenido-emergente">
+        <span id="close-ventana-emergente">X</span>
+        <span class="datos-fecha-seleccionada">
+            <label>Fecha: </label><span class="fecha-seleccionada">2017-03-24</span>
+            <label>Hora: </label><span class="hora-seleccionada">12:00</span>
+        </span>
+        <form  action="<?php echo base_url(); ?>principal/agendar_cita" method="post">
+            <input name="id" type="hidden" value="<?php echo @$_SESSION['id']; ?>">
+            <input name="estado" type="hidden" value="<?php echo 'futura'; ?>">
+            <input name="link" type="hidden" value="<?php echo ''; ?>">
+            <input name="fecha" type="hidden" class="fecha-usuario">
+            <input name="hora" type="hidden" class="hora-usuario">
+            <button class="btn-login">
+                Agendar Cita
+            </button>     
+        </form>
+    </div>
+ 
+</div>
+
+<script>
+    $('.day-hour.libre').click(function(){
+        var fecha = (this.id).split('-');
+        var ano = fecha[0];
+        var mes = fecha[1];
+        var dia = fecha[2];
+        var hora = fecha[3];
+
+        $("#ventana-emergente").css("display","block");
+        $(".contenido-emergente").css("display","block");
+        $(".fecha-seleccionada").text(dia + '-' + mes + '-' + ano);
+        $(".hora-seleccionada").text(hora);
+
+        $('input[type="hidden"][class="fecha-usuario"]').prop("value", ano + '-' + mes + '-' + dia );  
+        $('input[type="hidden"][class="hora-usuario"]').prop("value", hora + ':00:00');
+    });
+
+</script>
+<style>
+#ventana-emergente {
+  display: none;
+}
+.fondo-emergente {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: #439aca;
+    color: #FFF;
+    opacity: 0.6;
+}
+.contenido-emergente {
+    position: fixed;
+    display: none;
+    z-index: 11;
+    background-color: #FFF;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+.mi-cita {
+    background-color: pink !important;
+    cursor: pointer !important;
+}
+
+</style>

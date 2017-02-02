@@ -7,30 +7,25 @@
 		}
 		
 		public function index() {
-			
 			//$data = $this->sitio_model->get_datos_generales();
 			if(@$_SESSION['tipo_usuario'] == '')
 				redirect(base_url() . 'principal/login');
-			if(@$_SESSION['tipo_usuario'] == 'normal')
+			if(@$_SESSION['tipo_usuario'] == 'normal') {
+				$this->load->model('sitio_model');
 				redirect(base_url() . 'principal/portal');
+			}
 			if(@$_SESSION['tipo_usuario'] == 'admin')
 				redirect(base_url() . 'admin/index');
-			//$data['contenido_principal'] = 'principal';
-			//$this->load->view('estructura/templete', $data);
-			
-			
-			
 			$data['contenido_principal'] = 'login';
-			//$_SESSION['mensaje'] = 'sin mensaje';
-			//$data['mensaje'] = 'Sin accion todavia';
-			//$this->load->model('sitio_model');
-			//$data = $this->sitio_model->get_datos_generales();
+			
 			$this->load->view('estructura/templete', $data);
 
 		}
 		function portal() {
 			if(@$_SESSION['tipo_usuario'] == 'normal') {
 				$data['citas'] = $this->sitio_model->get_citas_by_usuario($_SESSION['id']);
+				$this->load->model('sitio_model');
+				$this->sitio_model->actualizar_sesion($_SESSION['id']);
 				$data['contenido_principal'] = 'portal';
 				$this->load->view('estructura/templete', $data);
 			}
@@ -63,11 +58,58 @@
 				redirect(base_url());
 			}
 		}
-		function agendar() {
+		function mi_cita($id) {
+			if(@$_SESSION['tipo_usuario'] == 'normal') {
+				$data['contenido_principal'] = 'mi_cita';
+				$this->load->model('sitio_model');
+          		$data['cita'] = $this->sitio_model->get_cita($id);
+				$this->load->view('estructura/templete', $data);
+			}
+			else {
+				redirect(base_url());
+			}
+		}
+		function agendar($week = null, $year = null) {
 			if(@$_SESSION['tipo_usuario'] == '')
 				redirect(base_url());
 			$this->load->model('sitio_model');
-          		$data['cuenta'] = $this->sitio_model->get_usuario($_SESSION['id']);
+			// Recmplazar la siguiente linea por Actualizar_session o algo asi
+          	// $data['cuenta'] = $this->sitio_model->get_usuario($_SESSION['id']);
+          	$this->load->model('sitio_model');
+				if( $week == null && $year == null ) {
+					$dt = new DateTime;
+	                if (isset($year) && isset($week) ) {
+	                    $dt->setISODate($year, $week );
+	                   
+	                } else {
+	                    $dt->setISODate($dt->format('o'), $dt->format('W'));
+	                }
+	                $year = $dt->format('o');
+	                $week = $dt->format('W');
+				} else {
+					$year_temp = null;
+					$week_temp = null;
+					$dt = new DateTime;
+	                if (isset($year_temp) && isset($week_temp) ) {
+	                    $dt->setISODate($year, $week_temp );
+	                   
+	                } else {
+	                    $dt->setISODate($dt->format('o'), $dt->format('W'));
+	                }
+	                $year_now = $dt->format('o');
+	                $week_now = $dt->format('W');
+	                if( $year < $year_now ) {
+	                	redirect(base_url() . 'principal/agendar/' . $week_now . '/' . $year_now );
+	                }
+	                if( $week < $week_now && $year == $year_now ) {
+	                	redirect(base_url() . 'principal/agendar/' . $week_now . '/' . $year_now );
+	                }
+				}
+
+				$data['week'] = $week;
+				$data['year'] = $year;
+
+				$data['citas'] = $this->sitio_model->get_citas_by_rango_meses($week, $year);
 			$data['contenido_principal'] = 'agendar';
 			$this->load->view('estructura/templete', $data);
 		}
@@ -107,8 +149,6 @@
 
 
 
-
-
 		public function iniciar_sesion() {
 			$this->load->model('sitio_model');
 			$this->load->helper('url');
@@ -130,6 +170,8 @@
 			session_destroy();
 			redirect(base_url());
 		}
+
+		
 		
 
 
@@ -146,7 +188,17 @@
           	}
           	redirect(base_url());
 		}
-
+		function cancelar_cita() {
+			$this->load->model('sitio_model');
+			if ( $this->sitio_model->cancelar_cita($_POST) ) {
+				//if( $this->link_agregado($_POST) ) {
+				//	redirect(base_url() . 'admin/calendario');
+				//}
+			}
+			else {
+				$data['mensaje'] = 'Ha ocurrido un error';
+			}
+		}
 
 
 

@@ -2,6 +2,10 @@
     
     <div class="container">
         <div class="row">
+            <div class="col-xs-12">  
+                <?php echo 'HOLA ' . @$_SESSION['nombre'] . ' ' . @$_SESSION['ap_paterno']; ?>
+                <?php echo '<br>id: ' . @$_SESSION['id']; ?>
+            </div>
             <div class="col-md-4 col-md-offset-8">  
                 <div class="citas-disponibles-container">
                     <h6>CITAS DISPONIBLES: <span><?php echo @$_SESSION['creditos']; ?></span></h6><a href="">COMPRAR</a>
@@ -30,9 +34,9 @@
                 
 
                 <?php if( @$_SESSION['creditos'] != 0) : ?>
-                <div class="agregar-cita">
-                    <a href="<?php echo base_url(); ?>principal/agendar"><img src="<?php echo base_url(); ?>assets/images/plus.svg" alt=""></a> AGENDAR CITA
-                </div>
+                    <div class="agregar-cita">
+                        <a href="<?php echo base_url(); ?>principal/agendar"><img src="<?php echo base_url(); ?>assets/images/plus.svg" alt=""></a> AGENDAR CITA
+                    </div>
                 <?php endif; ?>
             </div>
         </div>

@@ -32,10 +32,10 @@
                             <input name="precio_paquete" value="<?php echo $convenio->precio_paquete; ?>"><br>
                             <button class="btn-general">Editar</button>
                         </form>
-                        <form action="<?php echo base_url(); ?>admin/eliminar_convenio" method="post">
-                            <input name="convenioID" type="hidden" value="<?php echo $convenio->convenioID; ?>">
-                            <button class="btn-cancel">Eliminar</button>
-                        </form>
+                        
+                        <span id="convenioID-<?php echo $convenio->convenioID; ?>" class="btn-cancel btn-borrar-convenio">ELIMINAR</span>
+
+
                         <br><br><br>
                     <?php endif; ?>
                 <?php endforeach; ?>
@@ -65,7 +65,77 @@
 </div>
 
 
+
+
+<div id="ventana-emergente">
+  <div class="fondo-emergente"></div>
+  <div class="contenido-emergente-confirm">
+    <span id="close-ventana-emergente">X</span>
+    <h1>Seguro que desea eliminar usuario?</h1>
+    <form action="<?php echo base_url(); ?>admin/eliminar_convenio" method="post">
+        <input class="convenioID" name="convenioID" type="hidden" value="<?php echo $convenio->convenioID; ?>">
+        <button class="btn-cancel">Eliminar</button>
+    </form>
+    <span id="btn-cancelar" class="btn-general">CANCELAR</span>
+  </div>
+</div>
+<style>
+#ventana-emergente{
+    display: none;
+}
+.fondo-emergente {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: #439aca;
+    color: #FFF;
+    opacity: 0.6;
+}
+.contenido-emergente-confirm {
+    position: fixed;
+    display: none;
+    z-index: 11;
+    background-color: #FFF;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+#close-ventana-emergente {
+    position: relative;
+    display: block;
+    font-size: 24px;
+    text-align: right;
+    cursor: pointer;
+}
+</style>
 <script>
+
+
+    $('.btn-borrar-convenio').click(function(){
+        $("#ventana-emergente").css("display","block");
+        $(".contenido-emergente-confirm").css("display","block");
+
+        var convenioID = (this.id).split('-');
+        var id = convenioID[1];
+        alert(id);
+        $('input[type="hidden"][class="convenioID"]').prop("value", id );  
+    });
+    $('#close-ventana-emergente').click(function() {
+      $("#ventana-emergente").css("display","none");
+      $(".contenido-emergente-confirm").css("display","none");
+    });
+    $('#btn-cancelar').click(function() {
+      $("#ventana-emergente").css("display","none");
+      $(".contenido-emergente-confirm").css("display","none");
+    });
     $('#btn-agregar-convenio').click(function(){
         var display = $("#form-agregar-convenio").css("display");
         if( display == 'none' ) {

@@ -15,15 +15,10 @@
         <div class="row">
         	<div class="col-md-10 col-md-offset-2">
                 <button class="btn-login" onclick="history.go(-1);">Back </button>
-
                 <br><br>
-                
-
-
             <?php 
                 foreach($cliente->result() as $c ) :
             ?>
-
 
         	<h2><label>Cliente: </label><?php echo $c->nombre . ' ' . $c->ap_paterno . ' ' . $c->ap_materno; ?></h2>
             <h3><label>Telefono: </label><?php echo $c->telefono; ?></h3>
@@ -69,6 +64,11 @@
 
             <div>  
                 <br><br>
+                <?php if( $historial->result() ) : ?>
+                    <span id="btn-ver-historial" class="btn-general">Ver historial</span> <br><br>
+                <?php else : ?>
+                    <h3>Sin historial</h3>
+                <?php endif; ?>
                 <div id="historial-usuario" style="display:none;">
                 	<?php foreach( $historial->result() as $hist ) : ?>
                         <h1>Historial </h1> 
@@ -112,7 +112,7 @@
 
 
 
-                <span id="btn-ver-historial" class="btn-general">Ver historial</span> <br><br>
+                
                 <span id="btn-editar-usuario" class="btn-general">Editar usuario</span>
 
                 
@@ -147,10 +147,7 @@
                     </button>     
                 </form>
 
-                <form action="<?php echo base_url(); ?>admin/eliminar_usuario" method="post">
-                    <input type="hidden" name="usuarioID" value="<?php echo $c->usuarioID; ?>">
-                    <button class="btn-cancel">Eliminar usuario</button>
-                </form>
+                <span id="btn-borrar-usuario" class="btn-cancel">ELIMINAR USUARIO</span>
             <?php
                 endforeach;
             ?>
@@ -160,7 +157,71 @@
     </div>
 </div>
 
+<div id="ventana-emergente">
+  <div class="fondo-emergente"></div>
+  <div class="contenido-emergente-confirm">
+    <span id="close-ventana-emergente">X</span>
+    <h1>Seguro que desea eliminar usuario?</h1>
+    <form action="<?php echo base_url(); ?>admin/eliminar_usuario" method="post">
+        <input type="hidden" name="usuarioID" value="<?php echo $c->usuarioID; ?>">
+        <button class="btn-cancel">ELIMINAR</button>
+    </form>
+    <span class="btn-general">CANCELAR</span>
+  </div>
+</div>
+
+<style>
+#ventana-emergente{
+    display: none;
+}
+.fondo-emergente {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: #439aca;
+    color: #FFF;
+    opacity: 0.6;
+}
+.contenido-emergente-confirm {
+    position: fixed;
+    display: none;
+    z-index: 11;
+    background-color: #FFF;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+#close-ventana-emergente {
+    position: relative;
+    display: block;
+    font-size: 24px;
+    text-align: right;
+    cursor: pointer;
+}
+</style>
 <script>
+
+
+    $('#btn-borrar-usuario').click(function(){
+        $("#ventana-emergente").css("display","block");
+        $(".contenido-emergente-confirm").css("display","block");
+    });
+    $('#close-ventana-emergente').click(function() {
+      $("#ventana-emergente").css("display","none");
+      $(".contenido-emergente-confirm").css("display","none");
+    });
+
+
+
+
     $('#btn-editar-usuario').click(function(){
         var display = $("#form-editar-usuario").css("display");
         if( display == 'none' ) {

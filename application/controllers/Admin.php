@@ -1,5 +1,6 @@
 <?php
-	class Admin extends CI_Controller
+	include_once (dirname(__FILE__) . "/Correo.php");
+	class Admin extends Correo
 	{
 		function __construct()
 		{
@@ -15,7 +16,15 @@
 				redirect(base_url());
 			}
 		}
-
+		function admin() {
+			if(@$_SESSION['tipo_usuario'] == 'admin') {
+				$data['contenido_principal'] = 'admin';
+				$this->load->view('estructura/templete', $data);
+			}
+			else {
+				redirect(base_url());
+			}
+		}
 		function clientes() {
 			if(@$_SESSION['tipo_usuario'] == 'admin') {
 				$data['contenido_principal'] = 'clientes';
@@ -103,7 +112,7 @@
 
 				$data['citas'] = $this->sitio_model->get_citas_by_rango_meses($week, $year);
 
-				$data['usuarios'] = $this->sitio_model->get_usuarios();				
+				$data['usuarios'] = $this->sitio_model->get_usuarios_con_creditos();				
 				$this->load->view('estructura/templete', $data);
 			}
 			else {
@@ -159,9 +168,10 @@
 		function alta_usuario() {
 			$this->load->helper('url');
 			$this->load->model('sitio_model');
-
 			if($this->sitio_model->alta_usuario($_POST,'by_admin')) {
-				redirect(base_url() . 'admin/clientes');
+				if( $this->registro_exitoso($_POST) ) {
+					redirect(base_url() . 'admin/clientes');
+				}
 	        }
 			else {
 	            $data['mensaje'] = "Error";
@@ -213,9 +223,10 @@
 		}
 		function agendar_cita_admin() {
 			$this->load->model('sitio_model');
-
 			if($this->sitio_model->agendar_cita_admin($_POST)) {
-				redirect(base_url() . 'admin/calendario/' . $_POST['week'] . '/' . $_POST['year']);
+				if( $this->cita_agendada($_POST) ) {
+					redirect(base_url() . 'admin/calendario/' . $_POST['week'] . '/' . $_POST['year']);
+				}
 	        }
 			else {
 	            $data['mensaje'] = "Error";
@@ -226,7 +237,10 @@
 		function agregar_link_cita() {
 			$this->load->model('sitio_model');
 			if ( $this->sitio_model->agregar_link_cita($_POST) ) {
-				redirect(base_url() . 'admin/cita/' . $_POST['citaID']);
+				//if( $this->link_agregado($_POST) ) {
+					redirect(base_url() . 'admin/cita/' . $_POST['citaID']);
+				//}
+				
 			}
 			else {
 				$data['mensaje'] = 'Ha ocurrido un error';
@@ -244,7 +258,9 @@
 		function cancelar_cita() {
 			$this->load->model('sitio_model');
 			if ( $this->sitio_model->cancelar_cita($_POST) ) {
-				redirect(base_url() . 'admin/citas');
+				if( $this->cita_eliminada($_POST) ) {
+					redirect(base_url() . 'admin/calendario');
+				}
 			}
 			else {
 				$data['mensaje'] = 'Ha ocurrido un error';
@@ -292,5 +308,7 @@
 
 			}
 		}
+
+	
 
 	}

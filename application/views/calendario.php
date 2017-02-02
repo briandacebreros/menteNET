@@ -13,7 +13,6 @@
     <div class="container">
         <div class="row">
 
-            
             <div class="col-sm-10 col-sm-offset-2">
                 <?php
                 $dt = new DateTime;
@@ -181,6 +180,7 @@
       <?php foreach($usuarios->result() as $usuario ) : ?>
           <form class="form-row-usuario" action="<?php echo base_url(); ?>admin/agendar_cita_admin" method="post">
             <input type="hidden" name="id" value="<?php echo $usuario->usuarioID; ?>">
+            <input type="hidden" name="correo" value="<?php echo $usuario->correo; ?>">
             <input class="fecha-usuario" type="hidden" name="fecha" value="">
             <input class="hora-usuario" type="hidden" name="hora" value="">
             <input type="hidden" name="estado" value="futura">
@@ -252,6 +252,7 @@
         $('input[type="hidden"][class="fecha-usuario"]').prop("value", ano + '-' + mes + '-' + dia );  
         $('input[type="hidden"][class="hora-usuario"]').prop("value", hora + ':00:00');
 
+        // EN VERDAD OCUPO LO SIGUIENTE?
         if( display == 'none' ) {
             $("#historial-usuario").css("display","block");
             $("#btn-ver-historial").text("Ocultar historial");

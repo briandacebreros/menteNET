@@ -13,6 +13,13 @@
     <div class="container">
         <div class="row">
             <h3 class="title-big col-md-offset-2">CITAS PROXIMAS</h3>
+
+            <form  action="<?php echo base_url(); ?>correo/registro_exitoso" method="post">
+                <input type="text" name="destinatario" value="briandacebreros@gmail.com">
+                <button>Enviar correo test</button>
+            </form>
+
+
             <!-- DAY COLUMN -->
             <div id="day1" class="col-md-2 col-md-offset-2 day-column">
                 <div class="day-tile">
