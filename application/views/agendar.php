@@ -14,7 +14,6 @@
     <div class="container">
         <div class="col-sm-10 col-sm-offset-2">
             <?php
-                echo 'ID: ' . @$_SESSION['id'];
                 $dt = new DateTime;
                 if (isset($year) && isset($week) ) {
                     $dt->setISODate($year, $week );
@@ -46,6 +45,11 @@
                   $mi_cita_16 = '';
                   $mi_cita_18 = '';
 
+                  $mi_cita_12_id = '';
+                  $mi_cita_14_id = '';
+                  $mi_cita_16_id = '';
+                  $mi_cita_18_id = '';
+
                   $month = $dt->format('m');
                   $day = $dt->format('d');
 
@@ -65,19 +69,19 @@
                                 
 
                                 if( $cita->hora == "12:00:00") :
-                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_12 = 'mi-cita'; endif;
+                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_12 = 'mi-cita'; $mi_cita_12_id = $cita->citaID; endif;
                                   $cita_12 = 'ocupado';
                                 endif;
                                 if( $cita->hora == "14:00:00") :
-                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_14 = 'mi-cita'; endif;
+                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_14 = 'mi-cita'; $mi_cita_14_id = $cita->citaID; endif;
                                   $cita_14 = 'ocupado';
                                 endif;
                                 if( $cita->hora == '16:00:00' ) :
-                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_16 = 'mi-cita'; endif;
+                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_16 = 'mi-cita'; $mi_cita_16_id = $cita->citaID; endif;
                                   $cita_16 = 'ocupado';
                                 endif;
                                 if( $cita->hora == '18:00:00') :
-                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_18 = 'mi-cita'; endif;
+                                  if( $cita->usuarioID == @$_SESSION['id'] ) : $mi_cita_18 = 'mi-cita'; $mi_cita_18_id = $cita->citaID; endif;
                                   $cita_18 = 'ocupado';
                                 endif;
                               endif;
@@ -85,16 +89,32 @@
                         ?>
 
                         <div id="<?php echo $fecha_current . '-12'; ?>" class="day-hour <?php echo $cita_12 . ' ' . $mi_cita_12; ?>">
-                            12:00
+                            <?php if( $mi_cita_12 != '' ) : ?>
+                                <a href="<?php echo base_url(); ?>principal/mi_cita/<?php echo $mi_cita_12_id; ?>">12:00</a>
+                            <?php else : ?>
+                                12:00
+                            <?php endif; ?>
                         </div>
                         <div id="<?php echo $fecha_current . '-14'; ?>" class="day-hour <?php echo $cita_14 . ' ' . $mi_cita_14; ?>">
-                            14:00
+                            <?php if( $mi_cita_14 != '' ) : ?>
+                                <a href="<?php echo base_url(); ?>principal/mi_cita/<?php echo $mi_cita_14_id; ?>">14:00</a>
+                            <?php else : ?>
+                                14:00
+                            <?php endif; ?>
                         </div>
                         <div id="<?php echo $fecha_current . '-16'; ?>" class="day-hour <?php echo $cita_16 . ' ' . $mi_cita_16; ?>">
-                            16:00
+                            <?php if( $mi_cita_16 != '' ) : ?>
+                                <a href="<?php echo base_url(); ?>principal/mi_cita/<?php echo $mi_cita_16_id; ?>">16:00</a>
+                            <?php else : ?>
+                                16:00
+                            <?php endif; ?>
                         </div>
                         <div id="<?php echo $fecha_current . '-18'; ?>" class="day-hour <?php echo $cita_18 . ' ' . $mi_cita_18; ?>">
-                            18:00
+                            <?php if( $mi_cita_18 != '' ) : ?>
+                                <a href="<?php echo base_url(); ?>principal/mi_cita/<?php echo $mi_cita_18_id; ?>">18:00</a>
+                            <?php else : ?>
+                                18:00
+                            <?php endif; ?>
                         </div>
                     <?php endif; ?>
                   </div>
@@ -109,20 +129,6 @@
             </div>
         </div>
         
-
-
-        <div class="row">
-            <form  action="<?php echo base_url(); ?>principal/agendar_cita" method="post">
-                <input name="id" type="hidden" value="<?php echo @$_SESSION['id']; ?>">
-                <input name="estado" type="hidden" value="<?php echo 'futura'; ?>">
-                <input name="link" type="hidden" value="<?php echo ''; ?>">
-                <input name="fecha" type="date">
-                <input name="hora" type="text">
-                <button class="btn-login">
-                    Agendar Cita
-                </button>     
-            </form>
-        </div>
     </div>
 </div>
 
@@ -142,6 +148,7 @@
             <input name="link" type="hidden" value="<?php echo ''; ?>">
             <input name="fecha" type="hidden" class="fecha-usuario">
             <input name="hora" type="hidden" class="hora-usuario">
+            <input name="correo" type="hidden" value="<?php echo @$_SESSION['correo']; ?>">
             <button class="btn-login">
                 Agendar Cita
             </button>     
@@ -165,6 +172,11 @@
 
         $('input[type="hidden"][class="fecha-usuario"]').prop("value", ano + '-' + mes + '-' + dia );  
         $('input[type="hidden"][class="hora-usuario"]').prop("value", hora + ':00:00');
+    });
+
+    $('#close-ventana-emergente').click(function() {
+      $("#ventana-emergente").css("display","none");
+      $(".contenido-emergente-confirm").css("display","none");
     });
 
 </script>
@@ -200,6 +212,18 @@
 .mi-cita {
     background-color: pink !important;
     cursor: pointer !important;
+}
+.mi-cita a {
+    color: #FFF;
+    padding: 11px 27px;
+    text-decoration: none;
+}
+#close-ventana-emergente {
+    position: relative;
+    display: block;
+    font-size: 24px;
+    text-align: right;
+    cursor: pointer;
 }
 
 </style>

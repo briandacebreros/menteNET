@@ -1,5 +1,6 @@
 <?php
-	class Principal extends CI_Controller
+	include_once (dirname(__FILE__) . "/Correo.php");
+	class Principal extends Correo
 	{
 		function __construct()
 		{
@@ -180,7 +181,9 @@
 			$this->load->model('sitio_model');
 
 			if($this->sitio_model->agendar_cita($_POST)) {
-
+				if( $this->cita_agendada($_POST) ) {
+					redirect(base_url() . 'principal/portal');
+				}
 	        }
 			else {
 	            $data['mensaje'] = "Error";
@@ -191,9 +194,9 @@
 		function cancelar_cita() {
 			$this->load->model('sitio_model');
 			if ( $this->sitio_model->cancelar_cita($_POST) ) {
-				//if( $this->link_agregado($_POST) ) {
-				//	redirect(base_url() . 'admin/calendario');
-				//}
+				if( $this->cita_eliminada($_POST) ) {
+					redirect(base_url() . 'principal/agendar');
+				}
 			}
 			else {
 				$data['mensaje'] = 'Ha ocurrido un error';

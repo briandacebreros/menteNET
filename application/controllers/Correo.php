@@ -29,44 +29,28 @@
 			$asunto = 'MentaNET: Registro exitoso';
 			$mensaje = $this->get_mensaje_registro_exitoso();
 			$vista = '';
-			if ( $this->enviar_correo($destinatario, $asunto, $mensaje) ) {
-				redirect(base_url() . 'admin');
-			} else {
-				redirect(base_url() . 'admin/calendario');
-			}
+			return $this->enviar_correo($destinatario, $asunto, $mensaje);
 		}
 		function cita_eliminada() {
 			$destinatario = $_POST['correo'];
 			$asunto = 'MentaNET: Cita cancelada';
 			$mensaje = $this->get_mensaje_cita_eliminada();
 			$vista = '';
-			if ( $this->enviar_correo($destinatario, $asunto, $mensaje) ) {
-				redirect(base_url() . 'admin');
-			} else {
-				redirect(base_url() . 'admin/calendario');
-			}
+			return $this->enviar_correo($destinatario, $asunto, $mensaje);
 		}
 		function link_agregado() {
 			$destinatario = $_POST['correo'];
 			$asunto = 'MentaNET: Link agregado';
 			$mensaje = $this->get_mensaje_link_agregado();
 			$vista = '';
-			if ( $this->enviar_correo($destinatario, $asunto, $mensaje) ) {
-				redirect(base_url() . 'admin');
-			} else {
-				redirect(base_url() . 'admin/calendario');
-			}
+			return $this->enviar_correo($destinatario, $asunto, $mensaje);
 		}
 		function cita_agendada() {
 			$destinatario = $_POST['correo'];
 			$asunto = 'MentaNET: Cita agendada';
 			$mensaje = $this->get_mensaje_cita_agendada($_POST);
 			$vista = '';
-			if ( $this->enviar_correo($destinatario, $asunto, $mensaje) ) {
-				redirect(base_url() . 'admin');
-			} else {
-				redirect(base_url() . 'admin/calendario');
-			}
+			return $this->enviar_correo($destinatario, $asunto, $mensaje);
 		}
 		
 		function get_mensaje_registro_exitoso() {
