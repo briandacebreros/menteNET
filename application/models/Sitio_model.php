@@ -115,6 +115,10 @@
 
             // return $this->db->where($condiciones)->get('convenio');
         }
+        public function get_convenio($id) {
+            $condicion = array ( 'convenioID' => $id );
+            return $this->db->where($condicion)->get('convenio');
+        }
         public function agregar_convenio($data) {
             $datos = array(
                 'clave'         => $data['clave'],
@@ -145,12 +149,7 @@
             );
             return $this->db->where($condicion)->update('convenio',$datos);
         }
-        public function get_convenio($id) {
-            $condicion = array (
-                'convenioID'        => $id
-            );
-            return $this->db->where($condicion)->get('convenio');
-        }
+        
 
 
 

@@ -1,5 +1,4 @@
 <div class="container-general">
-    
     <div class="container">
         <div class="row">
         	<div class="col-md-2 col-md-offset-3">
@@ -11,6 +10,11 @@
                 </div>
             </div>
         </div>
+        <?php foreach($convenio_general->result() as $convenio ) : 
+        		$precio_cita1 = $convenio->precio_cita;
+        		$precio_cita4 = $convenio->precio_paquete;
+        	endforeach;
+        ?>
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
     
@@ -20,15 +24,21 @@
 					<input type="hidden" name="hosted_button_id" value="WFAVG394DB3MA">
 					<table>
 					<tr><td>
-					<input type="hidden" name="on0" value="Numero de citas">Numero de citas</td></tr><tr><td>
+					<input type="hidden" name="on0" value="Numero de citas"><h2>Numero de citas</h2></td></tr><tr><td>
 					<input name="os0" id="os0" type="hidden" value="1 Cita">
-					<h2>Seleccionar numero de citas</h2>
-					<div id="cita1" class="btn-selecc-creditos">1 Cita $500</div>
-					<div id="cita4" class="btn-selecc-creditos">4 Citas $1,200</div>
+					<div id="cita1" class="btn-selecc-creditos">
+						<span>1 Cita</span>
+						<span>$<?php echo $precio_cita1; ?></span>
+					</div>
+					<div id="cita4" class="btn-selecc-creditos">
+						<span>4 Citas</span>
+						<span>$<?php echo $precio_cita4; ?></span>
+					</div>
 					</td></tr>
 					</table>
 					<input type="hidden" name="currency_code" value="MXN">
-					<button border="0" name="submit">PAGAR</button>
+					<br><br>
+					<button border="0" name="submit" class="btn-general">PAGAR</button>
 					
 				</form>
 

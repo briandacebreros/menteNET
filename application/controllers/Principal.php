@@ -134,8 +134,10 @@
 			if(@$_SESSION['tipo_usuario'] == '')
 				redirect(base_url());
 			$this->load->model('sitio_model');
-          		$data['cuenta'] = $this->sitio_model->get_usuario($_SESSION['id']);
+          	$data['cuenta'] = $this->sitio_model->get_usuario($_SESSION['id']);
+          	$data['convenio_general'] = $this->sitio_model->get_convenio(6);
 			$data['contenido_principal'] = 'comprar_creditos';
+
 			$this->load->view('estructura/templete', $data);	
 		}
 		function historial_clinico() {
