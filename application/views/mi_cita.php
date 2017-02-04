@@ -93,15 +93,4 @@
       $("#ventana-emergente").css("display","none");
       $(".contenido-emergente-confirm").css("display","none");
     });
-
-    $('#btn-editar-cita').click(function(){
-        var display = $("#form-editar-cita").css("display");
-        if( display == 'none' ) {
-            $("#form-editar-cita").css("display","block");
-            $("#btn-editar-cita").css("display","none");
-        } else {
-            $("#btn-editar-cita").css("display","block");
-            $("#form-editar-cita").css("display","none");
-        }
-    });
 </script>

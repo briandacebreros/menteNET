@@ -10,15 +10,18 @@
                 </div>
             </div>
         </div>
-        <?php foreach($convenio_general->result() as $convenio ) : 
-        		$precio_cita1 = $convenio->precio_cita;
-        		$precio_cita4 = $convenio->precio_paquete;
+        <?php foreach($convenio->result() as $convenio_cliente ) : 
+        		$precio_cita1 = $convenio_cliente->precio_cita;
+        		$precio_cita4 = $convenio_cliente->precio_paquete;
+        		$nombre_convenio = $convenio_cliente->nombre;
+        		$clave_convenio = $convenio_cliente->clave;
         	endforeach;
         ?>
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
     
-                <h4 class="citas-title">COMPRAR CREDITOS</h4>
+                <h3 class="citas-title">COMPRAR CREDITOS</h3>
+                <h4><?php if( $clave_convenio != 'GENERAL' ) : echo 'Convenio: ' . $nombre_convenio; ?><?php endif; ?></h4>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 					<input type="hidden" name="cmd" value="_s-xclick">
 					<input type="hidden" name="hosted_button_id" value="WFAVG394DB3MA">

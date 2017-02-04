@@ -132,7 +132,7 @@
 
                         <label>Convenio</label><br>
                         <select name="convenioID">
-                            <option value="" selected></option>
+                            <option value="6" selected></option>
                             <?php foreach($convenios->result() as $con ) : ?>
                                 <?php if( $con->convenioID != '6' ) : ?>
                                     <?php if( $con->convenioID == $c->convenioID ) : $convenio_selected = "selected"; else : $convenio_selected = ""; endif; ?>

@@ -8,7 +8,6 @@
 		}
 		
 		public function index() {
-			//$data = $this->sitio_model->get_datos_generales();
 			if(@$_SESSION['tipo_usuario'] == '')
 				redirect(base_url() . 'principal/login');
 			if(@$_SESSION['tipo_usuario'] == 'normal') {
@@ -63,6 +62,7 @@
 			if(@$_SESSION['tipo_usuario'] == 'normal') {
 				$data['contenido_principal'] = 'mi_cita';
 				$this->load->model('sitio_model');
+				$this->sitio_model->actualizar_sesion($_SESSION['id']);
           		$data['cita'] = $this->sitio_model->get_cita($id);
 				$this->load->view('estructura/templete', $data);
 			}
@@ -74,9 +74,7 @@
 			if(@$_SESSION['tipo_usuario'] == '')
 				redirect(base_url());
 			$this->load->model('sitio_model');
-			// Recmplazar la siguiente linea por Actualizar_session o algo asi
-          	// $data['cuenta'] = $this->sitio_model->get_usuario($_SESSION['id']);
-          	$this->load->model('sitio_model');
+			$this->sitio_model->actualizar_sesion($_SESSION['id']);
 				if( $week == null && $year == null ) {
 					$dt = new DateTime;
 	                if (isset($year) && isset($week) ) {
@@ -118,7 +116,8 @@
 			if(@$_SESSION['tipo_usuario'] == '')
 				redirect(base_url());
 			$this->load->model('sitio_model');
-          		$data['cuenta'] = $this->sitio_model->get_usuario($_SESSION['id']);
+			$this->sitio_model->actualizar_sesion($_SESSION['id']);
+          	$data['cuenta'] = $this->sitio_model->get_usuario($_SESSION['id']);
 			$data['contenido_principal'] = 'editar_cuenta';
 			$this->load->view('estructura/templete', $data);	
 		}
@@ -126,6 +125,7 @@
 			if(@$_SESSION['tipo_usuario'] == '')
 				redirect(base_url());
 			$this->load->model('sitio_model');
+			$this->sitio_model->actualizar_sesion($_SESSION['id']);
           	$data['cuenta'] = $this->sitio_model->get_usuario($_SESSION['id']);
 			$data['contenido_principal'] = 'mi_cuenta';
 			$this->load->view('estructura/templete', $data);	
@@ -134,8 +134,11 @@
 			if(@$_SESSION['tipo_usuario'] == '')
 				redirect(base_url());
 			$this->load->model('sitio_model');
-          	$data['cuenta'] = $this->sitio_model->get_usuario($_SESSION['id']);
-          	$data['convenio_general'] = $this->sitio_model->get_convenio(6);
+			$this->sitio_model->actualizar_sesion($_SESSION['id']);
+			$usuario = $this->sitio_model->get_usuario($_SESSION['id']);
+			
+          	$data['cuenta'] = $usuario;
+          	$data['convenio'] = $this->sitio_model->get_convenio($_SESSION['convenioID']);
 			$data['contenido_principal'] = 'comprar_creditos';
 
 			$this->load->view('estructura/templete', $data);	
@@ -144,23 +147,18 @@
 			if(@$_SESSION['tipo_usuario'] == '')
 				redirect(base_url());
 			$this->load->model('sitio_model');
+			$this->sitio_model->actualizar_sesion($_SESSION['id']);
           	$data['cuenta'] = $this->sitio_model->get_usuario($_SESSION['id']);
 			$data['contenido_principal'] = 'historial_clinico';
 			$this->load->view('estructura/templete', $data);	
 		}
-
-
-
-
 		public function iniciar_sesion() {
 			$this->load->model('sitio_model');
 			$this->load->helper('url');
 			if($this->sitio_model->iniciar_sesion($_POST['usuario'], $_POST['contrasena'])) {
-
 				//$data['contenido_principal'] = 'portal';
 				//$this->load->view('estructura/templete', $data);
 				redirect(base_url()) . 'principal/signup';
-
 			} else {
 				//$_SESSION['mensaje'] = 'Usuario y/o contrasena incorrecta';
 				//$data['contenido_principal'] = 'login';
@@ -181,7 +179,6 @@
 
 		function agendar_cita() {
 			$this->load->model('sitio_model');
-
 			if($this->sitio_model->agendar_cita($_POST)) {
 				if( $this->cita_agendada($_POST) ) {
 					redirect(base_url() . 'principal/portal');
@@ -211,9 +208,6 @@
 
 
 		function alta_usuario() {
-			//$_SESSION['error_username'] = '';
-            //$_SESSION['error_correo'] = '';
-            
 
 			$this->load->helper('url');
 			$this->load->model('sitio_model');

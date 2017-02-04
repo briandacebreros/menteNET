@@ -337,6 +337,7 @@
 
         function set_datos_sesion_by_usuario($usuario) {
                 $_SESSION['id'] = $usuario->usuarioID;
+                $_SESSION['convenioID'] = $usuario->convenioID;
                 $_SESSION['username'] = $usuario->username;
                 $_SESSION['contrasena'] = $usuario->contrasena;
                 $_SESSION['nombre'] = $usuario->nombre;
