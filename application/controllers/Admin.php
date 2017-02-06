@@ -166,19 +166,34 @@
           	$data['usuarios'] = $this->sitio_model->get_usuarios();
 		}
 		function alta_usuario() {
-			$this->load->helper('url');
-			$this->load->model('sitio_model');
-			if($this->sitio_model->alta_usuario($_POST,'by_admin')) {
-				if( $this->registro_exitoso($_POST) ) {
-					redirect(base_url() . 'admin/clientes');
-				}
-	        }
-			else {
-	            $data['mensaje'] = "Error";
-	            redirect(base_url() . 'admin/clientes');
-          	}
-          	redirect(base_url());
+			$this->load->helper(array('form', 'url'));
+
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('username', 'Username', 'callback_username_check');
+			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
+			$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]');
+			$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+
+			$this->form_validation->set_message('error_username', '{field} must have at least {param} characters.');
+
+
+			if ($this->form_validation->run() == FALSE)
+                {
+                    $data['contenido_principal'] = 'nuevo_cliente';
+					$this->load->view('estructura/templete', $data);	
+                }
+                else
+                {
+                	if ($this->sitio_model->alta_usuario($_POST) ) {
+                		redirect(base_url() . 'admin/clientes');
+					}
+                }
 		}
+		public function username_check($usuario)
+        {
+        	$this->load->model('sitio_model');
+        	return $this->sitio_model->check_usuario($usuario);
+        }
 		function actualizar_usuario() {
 			$this->load->model('sitio_model');
 			if ( $this->sitio_model->actualizar_usuario($_POST) ) {

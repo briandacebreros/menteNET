@@ -214,7 +214,7 @@
 			$this->load->helper(array('form', 'url'));
 
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('username', 'Username', 'callback_username_check');
+			$this->form_validation->set_rules('username', 'Username', 'callback_username_check|required');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
 			$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]');
 			$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
@@ -224,27 +224,16 @@
 
 			if ($this->form_validation->run() == FALSE)
                 {
-                    $data['contenido_principal'] = 'login';
+                    $data['contenido_principal'] = 'signup';
 					$this->load->view('estructura/templete', $data);	
                 }
                 else
                 {
-                	$this->sitio_model->alta_usuario($_POST, 'by_usuario');
+                	if ($this->sitio_model->alta_usuario($_POST)) {
+                		$this->iniciar_sesion($_POST['username'], $_POST['password']);
+                	}
                     redirect(base_url());
                 }
-			/*
-			$this->load->helper('url');
-			$this->load->model('sitio_model');
-
-			if($this->sitio_model->alta_usuario($_POST, 'by_admin')) {
-
-	        }
-			else {
-	            $data['mensaje'] = "Error";
-	            redirect(base_url() . 'principal/signup');
-          	}
-          	redirect(base_url());
-			*/
 		}
 		public function username_check($usuario)
         {

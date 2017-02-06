@@ -245,16 +245,15 @@
                         'convenioID'    => $data['convenioID'],
                         'tipo_usuario'  => 'normal'                 
                     );             
-                    $this->db->insert('usuario',$datos);
+                    return $this->db->insert('usuario',$datos);
                     
-                        $this->iniciar_sesion($data['username'], $data['password']);
-                    
-                    return true;
+                    $this->iniciar_sesion($data['username'], $data['password']);
 
 
 
 
                //VARIFICANDO QUE NO EXISTA EL USUARIOOO
+                    /*
                $condicion_username = array(
                  'username'     => $data['username']
                );
@@ -291,7 +290,8 @@
                     	iniciar_sesion($data['username'], $data['contrasena']);
                     }
                     return true;
-               }               
+               }          
+               */     
         }
         public function actualizar_usuario($data) {
         	$condiciones = array (
