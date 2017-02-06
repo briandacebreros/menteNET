@@ -28,11 +28,28 @@
                         Crear cuenta
                     </button>     
                 </form>
+                <?php echo validation_errors(); ?>
 
-                <?php //echo @$_SESSION['error_username']; ?> <br>
-                <?php //echo @$_SESSION['error_correo']; ?>
+                    <form action="<?php echo base_url(); ?>principal/alta_usuario" method="post">
+                    
+                    <input  class="input-login" placeholder="Usuario" type="text" name="username" value="<?php echo set_value('username'); ?>" size="12" />
+                    <!--<span class="error-formulario"><?php if (form_error('username')) : echo 'Elige otro nombre de usuario'; endif; ?></span>-->
+                    <input class="input-login" placeholder="Contraseña" type="text" name="password" value="" size="50" />
+
+                    <input class="input-login" placeholder="Confirmar contraseña" type="text" name="passconf" value="" size="50" />
+
+                    <input class="input-login" placeholder="Correo electrónico" type="text" name="email" value="<?php echo set_value('email'); ?>" size="50" />
 
 
+                    <input class="input-login" placeholder="Teléfono" type="text" name="telefono" value="<?php echo set_value('email'); ?>" size="50" />
+
+                    <div><input class="btn-login" type="submit" value="Submit" /></div>
+
+                </form>
+                
+
+
+                
             </div>
         </div>
     </div>

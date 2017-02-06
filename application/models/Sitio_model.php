@@ -233,7 +233,27 @@
 
 
      
-		public function alta_usuario($data, $procedencia) {
+		public function alta_usuario($data) {
+            $datos = array(
+                        'username'      => $data['username'],
+                        'contrasena'    => sha1($data['password']),
+                        'nombre'        => $data['nombre'],
+                        'ap_paterno'    => $data['ap_paterno'],
+                        'ap_materno'    => $data['ap_materno'],
+                        'correo'        => $data['email'],
+                        'telefono'      => $data['telefono'],
+                        'convenioID'    => $data['convenioID'],
+                        'tipo_usuario'  => 'normal'                 
+                    );             
+                    $this->db->insert('usuario',$datos);
+                    
+                        $this->iniciar_sesion($data['username'], $data['password']);
+                    
+                    return true;
+
+
+
+
                //VARIFICANDO QUE NO EXISTA EL USUARIOOO
                $condicion_username = array(
                  'username'     => $data['username']
@@ -295,6 +315,28 @@
         	$this->db->where($condiciones)->delete('cita');
         	return $this->db->where($condiciones)->delete('usuario');
         }
+
+        public function check_usuario($usuario) {
+            $condicion_username = array(
+                 'username'     => $usuario
+               );
+
+               $existe_username = $this->db->where($condicion_username)->get('usuario')->num_rows() > 0;
+               if( $existe_username ) {
+                    return false;
+               } else {
+                    return true;
+               }           
+        }
+
+
+
+
+
+
+
+
+
         public function iniciar_sesion($username, $contrasena) {
 			$condiciones = array(
 				'username' 		=> $username,

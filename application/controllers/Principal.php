@@ -42,10 +42,12 @@
 			$this->load->view('estructura/templete', $data);
 		}
 		function signup() {
+			/*
 			if(@$_SESSION['tipo_usuario'] == 'normal')
 				redirect(base_url() . 'principal/portal');
 			if(@$_SESSION['tipo_usuario'] == 'admin')
 				redirect(base_url() . 'principal/admin');
+				*/
 			$data['contenido_principal'] = 'signup';
 			$this->load->view('estructura/templete', $data);
 		}
@@ -165,6 +167,7 @@
 				//$this->load->view('estructura/templete', $data);
 				redirect(base_url());
 			}
+			
 
 		}
 		function cerrar_sesion() {
@@ -208,7 +211,28 @@
 
 
 		function alta_usuario() {
+			$this->load->helper(array('form', 'url'));
 
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('username', 'Username', 'callback_username_check');
+			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
+			$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]');
+			$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+
+			$this->form_validation->set_message('error_username', '{field} must have at least {param} characters.');
+
+
+			if ($this->form_validation->run() == FALSE)
+                {
+                    $data['contenido_principal'] = 'login';
+					$this->load->view('estructura/templete', $data);	
+                }
+                else
+                {
+                	$this->sitio_model->alta_usuario($_POST, 'by_usuario');
+                    redirect(base_url());
+                }
+			/*
 			$this->load->helper('url');
 			$this->load->model('sitio_model');
 
@@ -220,8 +244,13 @@
 	            redirect(base_url() . 'principal/signup');
           	}
           	redirect(base_url());
-
+			*/
 		}
+		public function username_check($usuario)
+        {
+        	$this->load->model('sitio_model');
+        	return $this->sitio_model->check_usuario($usuario);
+        }
 		function actualizar_usuario() {
 			$this->load->model('sitio_model');
 			if ( $this->sitio_model->actualizar_usuario($_POST) ) {
